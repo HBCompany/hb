@@ -1,0 +1,398 @@
+
+
+@media screen and (max-width: 600px ){
+    body{
+        background-color: #e3e3e3;
+        width: 95%;
+        margin:auto 3%;
+    }
+
+    select{
+        border:none;
+        background-color: #e3e3e3;
+    }
+
+    input{
+        margin-top: 15%;
+        padding-top: 3%;
+        width: 90%;
+        height: 40%;
+        font-family:'Bahnschrift';
+        border-radius: 10px;
+        border:none;
+        color:#DCD2E1;
+        background-color:#8B53A6;
+    }
+
+    h1{
+        font-size:18px;
+        text-align:center;
+        font-family:'Yu Gothic UI Semibold';
+        color:black;
+    }
+
+
+
+    a{
+        text-decoration: none;
+        color:white;
+    }
+
+    hr{
+        margin-top: 9%;
+    }
+
+
+
+    .image-men{
+        width: 50%;
+        height:50%;
+        padding-top: 35%;
+        padding-left: 20%;
+    }
+
+
+    .grid{
+        display: grid;
+        height: 100%;
+    }
+
+    .main{
+
+        grid-template-rows: 0.5fr 3fr 1fr 0.5fr;
+    }
+
+
+    .block{
+        display: grid;
+        height: 100%;
+        grid-template-rows:0.1fr 0.3fr ;
+    }
+
+    .head-logo{
+        display: grid;
+        height: 100%;
+        grid-template-columns:0.3fr 1fr 0.3fr;
+    }
+
+
+    .padd-h1{
+        margin-top: 5%;
+    }
+
+    .content-block{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        border-bottom: 1px solid #8B53A6;
+        border-top: 1px solid #8B53A6;
+    }
+
+    .ct-image{
+        width: 100%;
+        height: 100%;
+    }
+
+    .ct-box-1{
+        margin:5%;
+        border: 1px solid #8B53A6;
+    }
+
+    .ct-box-2{
+
+    }
+
+    .ct-box-3{
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+
+    .ct-box-4{
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+
+
+    .grid-footer{
+        display: grid;
+        height: 100%;
+        grid-template-columns:1fr 1fr ;
+        grid-gap: 0px;
+    }
+
+    .block-form{
+        display: grid;
+        height: 95%;
+        grid-template-columns:0.4fr 1fr 0.4fr;
+        background-color:#DCD2E1 ;
+        border-bottom:1px solid grey;
+    }
+
+
+
+    .block-logo{
+        display: grid;
+        height: 100%;
+        width: 100%;
+        grid-template-columns: 1fr 0.4fr;
+        grid-template-rows:1.2fr 1.2fr 1.2fr 1fr;
+    }
+
+    .yes-no{
+        display: grid;
+        height: 100%;
+        grid-template-columns: 0.4fr 0.7fr 0.2fr 0.2fr;
+    }
+
+    .yes-no-fon{
+        background-size:cover;
+        background-position:center;
+        background-image: url(https://c7.hotpng.com/preview/111/998/429/x-mark-check-mark-desktop-wallpaper-clip-art-x-mark.jpg);
+        height: 95%;
+    }
+
+    .menu{
+        border-radius: 15px;
+        border:2px solid orange;
+        box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    }
+
+    /*.menu:active{
+        border-radius: 15px;
+        background-color: green;
+        box-shadow: none;
+    }*/
+
+
+    .data-forget{
+        margin-left: 2%;
+        font-size:13px;
+        text-align:left;
+        font-family:'Bahnschrift';
+        letter-spacing: 1px;
+        line-height: 1.2;
+        color:#8B53A6;
+    }
+
+    .sing-up{
+        padding-top:6%;
+        font-size:18px;
+        text-align: left;
+        font-family:'Corbel';
+        letter-spacing: 1.5px;
+        line-height: 1;
+        color:#8B53A6;
+    }
+
+    .marg-sing{
+        margin-top: -3px;
+        line-height: 1.2;
+    }
+
+    .zagol{
+        margin-top: 5%;
+        margin-left: 2%;
+        font-size:14px;
+        font-family:'Bahnschrift Light';
+        letter-spacing: 1px;
+        line-height:1.8;
+        color:#8B53A6;
+        text-align: left;
+        text-indent: 5%;
+    }
+
+
+
+    .input-email{
+        width: 250px;
+        height: 35px;
+        border-radius: 7px;
+        border:none;
+        box-shadow: 0 7px 7px rgba(0,0,0,0.4);
+    }
+
+
+
+    .ex-content{
+        width: 100%;
+        height: 100%;
+        border:1px solid #8B53A6;
+        border-radius: 10px;
+    }
+
+
+
+    ul li {
+        cursor: pointer;
+        position: relative;
+        padding: 12px 8px 12px 40px;
+        list-style-type: none;
+        background:  #d9d9d9;
+        font-family:'Bahnschrift Light';
+        color:#8B53A6;
+        letter-spacing: 1px;
+        font-size: 15px;
+        transition: 0.2s;
+        margin-top: 2%;
+        border:1px solid #8B53A6;
+        /* make the list items unselectable */
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+    /* Set all odd list items to a different color (zebra-stripes) */
+    /*ul li:nth-child(odd) {
+      background: #f9f9f9;
+    }*/
+
+    /* Darker background-color on hover */
+    ul li:active {
+        background: #ddd;
+    }
+
+    /* When clicked on, add a background color and strike out text */
+    ul li.checked {
+        background: #8B53A6;
+        color: #fff;
+        text-decoration: line-through;
+    }
+
+    /* Add a "checked" mark when clicked on */
+    ul li.checked::before {
+        content: '';
+        position: absolute;
+        border-color: #fff;
+        border-style: solid;
+        border-width: 0 2px 2px 0;
+        top: 10px;
+        left: 16px;
+        transform: rotate(45deg);
+        height: 15px;
+        width: 7px;
+
+    }
+
+    #myUL{
+        margin:0;
+        margin-left: -13%;
+        margin-top: 2%;
+    }
+
+    /* Style the close button */
+    .close {
+        position: absolute;
+        right: 0;
+        top: 0;
+        padding: 12px 16px 12px 16px;
+    }
+
+    .close:active {
+        background-color: #f44336;
+        color: white;
+    }
+
+
+
+
+    /* Clear floats after the header */
+    .header:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    /* Style the input */
+    input {
+        margin: 0;
+        border: none;
+        border-radius: 0;
+        width: 60%;
+        padding: 10px;
+        float: left;
+        font-size: 16px;
+        background-color:  #d9d9d9;
+        color:#8B53A6;
+    }
+
+    /* Style the "Add" button */
+    .addBtn {
+        padding: 10px;
+        margin-left:1%;
+        width: 25%;
+        background: #d9d9d9;
+        color: #8B53A6;
+        float: left;
+        font-family:'Corbel';
+        text-align: center;
+        font-size: 16px;
+        cursor: pointer;
+        transition: 0.3s;
+        border-radius: 0;
+
+    }
+
+    .addBtn:hover {
+        background-color: #bbb;
+    }
+
+    .btn {
+        margin: 1%;
+        border: 1px solid #8B53A6;
+        outline: none;
+        padding: 12px 16px;
+        background-color: #e3e3e3;
+        cursor: pointer;
+        font-family:'Bahnschrift Light';
+        color: #8B53A6;
+        font-size: 15px;
+        width: 98%;
+    }
+
+    .active{
+        background-color: #8B53A6;
+        color: #e3e3e3;
+    }
+
+}
+
+@media screen and (min-height: 600px) {
+
+    h2{
+        font-size: 140%;
+    }
+
+    .btn {
+        font-size: 110%;
+        padding:16px 19px;
+    }
+
+    .input-email{
+        width: 40vh;
+        height: 6vh;
+    }
+
+
+
+    .sing-up{
+        font-size: 120%;
+    }
+
+    .data-forget{
+        font-size: 120%;
+    }
+
+    .collapsible {
+        padding: 18px;
+        font-size: 120%;
+        margin-top: 3%;
+        height: 30%;
+    }
+
+    .zagol{
+        font-size: 120%;
+    }
+
+
+}

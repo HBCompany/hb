@@ -1,0 +1,192 @@
+
+
+@media screen and (max-width: 823px){
+    body{
+        background-color: #8B53A6;
+    }
+
+    input{
+        font-family: 'Play', sans-serif;
+    }
+
+    h1{
+        font-size:32px;
+        text-align:center;
+        font-family: 'Permanent Marker', cursive;
+        color:#e3e3e3;
+    }
+
+    h2{
+        font-size:18px;
+        text-align: center;
+        font-family: 'Play', cursive;
+        letter-spacing: 2px;
+        line-height: 1;
+        color:#e3e3e3;
+    }
+
+    a{
+        text-decoration: none;
+        color:#e3e3e3;
+    }
+
+    label{
+        font-size:18px;
+        font-family: 'Play', cursive;
+        letter-spacing: 2px;
+        line-height: 1;
+        color:#e3e3e3;
+    }
+
+    .grid{
+        display: grid;
+        height: 97vh;
+    }
+
+    .main{
+        grid-template-rows:1.5fr 5fr 1fr;
+    }
+
+    .head-logo{
+        display:flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+
+    .sing-up{
+        margin-top: -1%;
+        font-size:18px;
+        text-align: center;
+        font-family: 'Play', cursive;
+        letter-spacing: 2px;
+        line-height: 1;
+        color:#8B53A6;
+    }
+
+    .sign-face{
+        margin-top:0%;
+        padding-left:5px;
+        font-size:13px;
+        text-align: left;
+        font-family: 'Play', sans-serif;
+        letter-spacing: 1px;
+        line-height: 1.5;
+        color:#e3e3e3;
+    }
+
+
+    .input-email{
+        width: 250px;
+        height: 35px;
+        border-radius: 7px;
+        border:none;
+        box-shadow: 0 7px 7px rgba(0,0,0,0.4);
+    }
+
+    .input-submit{
+        width: 35vh;
+        height:8vh ;
+        border:none;
+        background-color:#e3e3e3;
+        color: #8B53A6;
+        border-radius: 30px;
+        font-size: 130%;
+        box-shadow: 0 0 10px rgba(0,0,0,0.5);
+        margin-bottom:1vh;
+    }
+
+
+
+    /* The container */
+    .container {
+        display: block;
+        position: relative;
+        padding-left: 20%;
+        cursor: pointer;
+    }
+
+
+    .container input {
+        position: relative;
+        opacity: 0;
+        cursor: pointer;
+    }
+
+
+    .checkmark {
+        position: absolute;
+        top:20%;
+        left: 0;
+        height: 20px;
+        width: 20px;
+        background-color: #eee;
+        border-radius: 50%;
+    }
+
+
+    .container:hover input ~ .checkmark {
+        background-color: #ccc;
+    }
+
+
+    .container input:checked ~ .checkmark {
+        background-color: #e3e3e3;
+    }
+
+
+    .checkmark:after {
+        content: "";
+        position: absolute;
+        display: none;
+    }
+
+
+
+
+    .dot {
+        cursor: pointer;
+        height: 15px;
+        width: 15px;
+        margin: 0 2px;
+        background-color: #bbb;
+        border-radius: 50%;
+        display: inline-block;
+        transition: background-color 0.6s ease;
+    }
+
+    .active, .dot:hover {
+        background-color:#e3e3e3;
+    }
+
+}
+
+@media screen and (min-height: 600px) {
+
+    h1{
+        font-size: 250%;
+    }
+
+    input{
+
+        font-size: 100%;
+    }
+
+
+
+    .sing-up{
+        font-size: 140%;
+    }
+
+    .sign-face{
+        font-size: 100%;
+    }
+
+    .dot {
+        height: 20px;
+        width: 20px;
+    }
+
+
+}

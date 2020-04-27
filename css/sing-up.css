@@ -1,0 +1,169 @@
+@media screen and (max-width: 823px){
+    body{
+        background-color: #e3e3e3;
+    }
+
+    select{
+        border:none;
+        background-color: #e3e3e3;
+    }
+
+    input{
+        text-align: center;
+        font-family: 'Play', sans-serif;
+        background-color: white;
+        color: #8B53A6;
+        margin-top: 7%;
+    }
+
+    h1{
+        font-size:32px;
+        text-align:center;
+        font-family: 'Lobster', cursive;
+        color:#8B53A6;
+    }
+
+    a{
+        text-decoration: none;
+        color:#8B53A6;
+    }
+
+    hr{
+        margin-top: 10px;
+    }
+
+
+    .grid{
+        display: grid;
+        height: 97vh;
+        grid-gap: 2px;
+    }
+
+    .main{
+        grid-template-rows: 1fr 2fr ;
+    }
+
+    .head-logo{
+        display:flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        background-color:;
+    }
+
+
+
+    .grid-footer{
+        display: grid;
+        height: 100%;
+        grid-template-rows:1fr 0.9fr  ;
+    }
+
+    .opac{
+        opacity: 0.6;
+    }
+
+    .data-forget{
+        margin-top: -3px;
+        font-size:14px;
+        text-align:center;
+        font-family: 'Play', sans-serif;
+        letter-spacing: 1px;
+        line-height: 1.5;
+        color:#8B53A6;
+    }
+
+    .sing-up{
+        margin-top: -0px;
+        font-size:18px;
+        text-align: center;
+        font-family: 'Pacifico', cursive;
+        letter-spacing: 2px;
+        line-height: 1;
+        color:#8B53A6;
+    }
+
+    .sign-face{
+        margin-top: -5px;
+        font-size:15px;
+        text-align: center;
+        font-family:'Bahnschrift';
+        letter-spacing: 2px;
+        line-height: 1.5;
+        color:#8B53A6;
+    }
+
+    .input-email{
+        width: 250px;
+        height: 35px;
+        border-radius: 7px;
+        border:none;
+        box-shadow: 0 7px 7px rgba(0,0,0,0.4);
+    }
+
+    .margin-button{
+        margin-top: -2%;
+    }
+
+    .input-color{
+        background-color:#8B53A6 ;
+        color: #e3e3e3;
+    }
+
+    .btn {
+        width: 70%;
+        padding: 12px;
+        border: none;
+        border-radius: 4px;
+        margin: 2% 0 0 10%;
+        opacity: 0.85;
+        display: inline-block;
+        font-size: 14px;
+        line-height: 20px;
+        text-decoration: none;
+    }
+
+
+    .fb {
+        background-color: #3B5998;
+        color: white;
+        text-align: center;
+    }
+
+
+
+}
+
+
+@media screen and (min-height: 600px) {
+    .btn {
+        font-size: 120%;
+
+    }
+
+    h1{
+        font-size: 250%;
+    }
+
+    input{
+        margin-top:10%;
+        font-size: 100%;
+    }
+
+    .input-email{
+        width: 40vh;
+        height: 6vh;
+    }
+
+
+
+    .sing-up{
+        font-size: 120%;
+    }
+
+    .data-forget{
+        font-size: 120%;
+    }
+
+
+}

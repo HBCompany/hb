@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" href="css/head-menu.css">
+	<link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Russo+One&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap" rel="stylesheet">
+    <title>Menu</title>
+</head>
+    <body>
+	
+	<div class="grid main">
+			<div class="block-logo">
+				<div></div>
+				<div><h1>HomeBook</h1></div>
+				<div>
+					<a href="setting.html"><img src="img/setting.png" class="image-men" alt="Настройки"></a>
+				</div>
+			</div>
+			<div class="head-logo">
+				<div class="sim-slider">
+					<ul class="sim-slider-list">
+						<li><img src="http://pvbk.spb.ru/inc/slider/imgs/no-image.gif" alt="screen"></li> <!-- это экран -->
+						<li class="sim-slider-element">
+								<h2>Здравствуйте, Мария</h2>
+								<p>Добро пожаловать в HOMEBOOK</p>
+							<p>Добро пожаловать в HOMEBOOK</p>
+								<a href="head-menu.html"><input type="submit" value="Перейти" class="input-submit" ></a>
+						</li>
+						<li class="sim-slider-element">
+							<div class="slider-element">
+								<h2>Вы забыли убрать кухню</h2>
+								<p>Сделайте это сейчас!</p>
+								<p>Сделайте это сейчас!</p>
+								<a href="head-menu.html"><input type="submit" value="Перейти" class="input-submit" ></a>
+							</div>
+						</li>
+						<li class="sim-slider-element">
+							<div class="slider-element">
+								<h2>Задание недели ждёт Вас!</h2>
+								<p>Персональное задание уже здесь!</p>
+								<p>Сделайте это сейчас!</p>
+								<a href="head-menu.html"><input type="submit" value="Перейти" class="input-submit" ></a>
+							</div>
+						</li>
+						<li class="sim-slider-element">
+							<div class="slider-element">
+								<h2>Здравствуйте, Артем</h2>
+								<p>Добро пожаловать в HOMEBOOK</p>
+								<p>Сделайте это сейчас!</p>
+								<a href="head-menu.html"><input type="submit" value="Перейти" class="input-submit" ></a>
+							</div>
+						</li>
+						<li class="sim-slider-element">
+							<div class="slider-element">
+								<h2>Здравствуйте, Артем</h2>
+								<p>Добро пожаловать в HOMEBOOK</p>
+								<p>Сделайте это сейчас!</p>
+								<a href="head-menu.html"><input type="submit" value="Перейти" class="input-submit" ></a>
+							</div>
+						</li>
+						<li class="sim-slider-element">
+							<div class="slider-element">
+								<h2>Здравствуйте, Артем</h2>
+								<p>Добро пожаловать в HOMEBOOK</p>
+								<p>Сделайте это сейчас!</p>
+								<a href="head-menu.html"><input type="submit" value="Перейти" class="input-submit" ></a>
+							</div>
+						</li>
+					</ul>
+					<div class="sim-slider-arrow-left"></div>
+					<div class="sim-slider-arrow-right"></div>
+					<div class="sim-slider-dots"></div>
+				</div>
+			</div>
+			<div class="menu-box">
+				<div id="myBtnContainer">
+  					<button class="btn active"  onclick="filterSelection('animals')">Мои рутины</button>
+  					<button class="btn" onclick="filterSelection('cars')"  >Мои комнаты</button>
+				</div>
+  				<div class=" filterDiv animals">
+				<div>
+					<a href="rutina.html?id=ck444effec68d0b73itm6ukiv">
+					<button class="collapsible">Дневная рутина</button>
+					</a>
+				</div>
+				<div>
+					<a href="rutina.html?id=ck444hdooodp60b66no26sgk1">
+					<button class="collapsible">Вечерняя рутина</button>
+					</a>
+				</div>
+  				
+  				<div>
+					<form action="">
+					<button disabled class="collapsible opac">Задание недели</button>
+					</form>
+				</div>
+
+  				<div>
+					<form action="">
+					<button disabled class="collapsible opac">Время для себя</button>
+					</form>
+				</div>
+
+  				<div>
+					<form action="">
+					<button disabled class="collapsible opac">Отложенные дела</button>
+					</form>
+				</div>
+			</div>
+
+			<div class="filterDiv cars">
+				<div>
+					<a href="zone.html">
+						<button class="collapsible">Кухня</button>
+					</a>
+				</div>
+				<div>
+					<button disabled class="collapsible opac">Ванная комната</button>
+				</div>
+				<div>
+					<button disabled class="collapsible opac">Спальня</button>
+				</div>
+				<div>
+					<button disabled class="collapsible opac">Гостинная</button>
+				</div>
+				<div>
+					<button disabled class="collapsible opac">Коридор</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="js/head-menu.js"></script>
+    </body>
+</html>
+

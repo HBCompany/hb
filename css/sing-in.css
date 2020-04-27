@@ -1,0 +1,108 @@
+
+@media screen and (max-width: 823px){
+
+    body{
+        background-color:#8B53A6;
+    }
+
+    input{
+        font-family: 'Play', sans-serif;
+    }
+
+    h1{
+        font-size:40px;
+        text-align:center;
+        font-family: 'Permanent Marker', cursive;
+        color: #e3e3e3;
+        letter-spacing: 2px;
+    }
+
+    a{
+        text-decoration: none;
+        color:#e3e3e3;
+    }
+
+    p{
+        margin-top: 10%;
+        color:#e3e3e3;
+    }
+
+    .image-men{
+        width: 20%;
+        height:30%;
+        margin-top: 25%;
+        padding-bottom: 5% ;
+    }
+
+    .grid{
+        display: grid;
+        height: 96vh;
+    }
+
+    .main{
+        grid-template-rows: 1.5fr 3fr;
+    }
+
+    .head-logo{
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .data-forget{
+        margin-top: 3%;
+        font-size:14px;
+        text-align:center;
+        font-family: 'Play', sans-serif;
+        letter-spacing: 1px;
+        line-height: 1.5;
+        color:#8B53A6;
+    }
+
+
+    .input-submit{
+        width: 35vh;
+        height:8vh ;
+        border:none;
+        background-color:#e3e3e3;
+        color:#8B53A6;
+        border-radius: 30px;
+        font-size: 130%;
+        box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    }
+
+}
+
+
+@media screen and (min-height: 600px) {
+    .btn {
+        font-size: 100%;
+
+    }
+
+    h1{
+        font-size: 300%;
+    }
+
+    input{
+        font-size: 100%;
+    }
+
+    .input-email{
+        width: 40vh;
+        height: 6vh;
+    }
+
+    .sing-up{
+        font-size: 150%;
+    }
+
+    .data-forget{
+        font-size: 120%;
+    }
+
+    .input-marg{
+        margin-top: -10%;
+    }
+
+}

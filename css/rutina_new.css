@@ -1,0 +1,365 @@
+
+@media screen and (max-width: 812px ){
+    body{
+        background-color: #8B53A6;
+
+    }
+
+
+    input{
+        text-align: center;
+        font-family: 'Play', sans-serif;
+    }
+
+    h1{
+        font-size:32px;
+        text-align:center;
+        font-family: 'Permanent Marker', cursive;
+        color:#e3e3e3;
+    }
+
+    h2{
+        font-size:16px;
+        text-align:center;
+        font-family: 'Russo One', cursive;
+        color:#e3e3e3;
+        margin-left: 8%;
+        margin-top: -3%;
+    }
+
+    p{
+        font-size:13px;
+        text-align:left;
+        color:#e3e3e3;
+    }
+
+
+    a{
+        text-decoration: none;
+        color:#e3e3e3;
+    }
+
+
+    .image-men{
+        width: 48%;
+        height:40%;
+        padding-top: 37%;
+        padding-left: 17px;
+    }
+
+    .margin-block{
+        margin-top: -10%;
+    }
+
+    .grid{
+        display: grid;
+        height: 97vh;
+        grid-gap: 2px;
+        margin:0 auto;
+    }
+
+    .main{
+        margin: 0;
+        grid-template-rows: 0.1fr 4fr;
+    }
+
+
+    .head-logo{
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: -7%;
+    }
+
+    .block-logo{
+        display: grid;
+        height: 100%;
+        grid-template-columns: 0.4fr 1fr 0.4fr;
+
+    }
+
+    .menu{
+        border-radius: 15px;
+        border:1px solid #e3e3e3;
+        box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    }
+
+    .menu:active{
+        border-radius: 15px;
+        background-color: green;
+        box-shadow: none;
+    }
+
+
+    .opac{
+        opacity: 0.6;
+    }
+
+    .sing-up{
+        font-size:100%;
+        text-align: center;
+        font-family: 'Pacifico', cursive;
+        letter-spacing: 1px;
+        line-height: 1;
+        color:#e3e3e3;
+    }
+
+    .marg-sing{
+        margin-top: -3px;
+        line-height: 1.2;
+    }
+
+    .padd{
+        margin-top: -11px;
+        font-size:12px;
+        text-align: center;
+        font-family:'Bahnschrift';
+        letter-spacing: 1px;
+        line-height: 1;
+        color:#e3e3e3;
+    }
+
+
+    .input-email{
+        width: 250px;
+        height: 35px;
+        border-radius: 7px;
+        border:none;
+        box-shadow: 0 7px 7px rgba(0,0,0,0.4);
+    }
+
+    .block-arrow:active{
+        border-radius: 15px;
+        background-color: green;
+    }
+
+    .collapsible {
+        background-color:#8B53A6;
+        font-family: 'Play', sans-serif;
+        color: #e3e3e3;
+        cursor: pointer;
+        padding: 15px;
+        width: 100%;
+        border: none;
+        text-align: left;
+        outline: none;
+        font-size: 15px;
+        border:1px solid #e3e3e3;
+        border-radius: 10px;
+        margin-top: 3px;
+    }
+
+    .content {
+        padding: 0 18px;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.2s ease-out;
+        background-color:#e3e3e3;
+    }
+
+
+
+    .filterDiv {
+        display: none;
+    }
+
+    .show {
+        display: block;
+    }
+
+    .container {
+        margin-top: 20px;
+        overflow: hidden;
+    }
+
+    /* Style the buttons */
+    .btn {
+        border: 1px solid #e3e3e3;
+        outline: none;
+        padding: 12px 16px;
+        background-color: #8B53A6;
+        cursor: pointer;
+        font-family: 'Play', sans-serif;
+        color:#e3e3e3;
+        font-size: 15px;
+        width: 49%;
+        border-radius:10px;
+    }
+
+    .menu-box{
+        margin-top: 3%;
+    }
+
+
+    /*Добавление рутин*/
+    .container {
+        display: block;
+        width: 100%;
+        margin-top: -10%;
+    }
+    ul {
+        margin: 0;
+        padding: 0;
+    }
+    li * {
+        float: left;
+    }
+
+    input, button {
+        outline: none;
+    }
+
+    /* Heading */
+    h3,
+    label[for='new-task'] {
+        color:#e3e3e3;
+        font-weight: 700;
+        font-size: 15px;
+        border-bottom: 2px solid #e3e3e3;
+        padding: 30px 0 10px;
+        margin: 0;
+        text-transform: uppercase;
+    }
+    input[type="text"] {
+        margin: 0;
+        font-size: 18px;
+        line-height: 18px;
+        height: 18px;
+        padding: 10px;
+        border: none;
+        background: #8B53A6;
+        border-radius: 20px;
+        font-family: Lato, sans-serif;
+        color: #e3e3e3;
+    }
+    input[type="text"]:focus {
+            color:black ;
+    }
+
+
+
+    /* New Task */
+    label[for='new-task'] {
+        display: block;
+        margin: 0 0 10px;
+    }
+    input#new-task {
+        float: left;
+        width: 70%;
+        background:#e3e3e3;
+        color:#8B53A6;
+    }
+    p > button:hover {
+        color: #0FC57C;
+    }
+
+    /* Task list */
+    li {
+        overflow: hidden;
+        padding: 2% 0;
+        border-bottom: 1px solid #eee;
+    }
+    li > input[type="checkbox"] {
+        margin: 0 10px;
+        position: relative;
+        top: 15px;
+    }
+    li > label {
+        font-size: 18px;
+        line-height: 40px;
+        width: 237px;
+        padding: 0 0 0 11px;
+    }
+    li >  input[type="text"] {
+        width: 60%  ;
+    }
+    li > .delete:hover {
+        color: #CF2323;
+    }
+
+    /* Completed */
+    #completed-tasks label {
+        text-decoration: line-through;
+        color: #e3e3e3;
+    }
+
+    /* Edit Task */
+    ul li input[type=text] {
+        display:none;
+    }
+
+    ul li.editMode input[type=text] {
+        display:block;
+    }
+
+    ul li.editMode label {
+        display:none;
+    }
+
+    .input-submit{
+        width: 10vh;
+        height:6vh ;
+        border:none;
+        background-color:#e3e3e3;
+        color:#8B53A6;
+        border-radius: 30px;
+        font-size: 100%;
+        box-shadow: 0 0 10px rgba(0,0,0,0.5);
+        margin-left: 2%;
+        margin-top: 0.9%;
+    }
+
+    .input-edit{
+        height: 20%;
+    }
+
+    #inp-color{
+        background: #e3e3e3;
+    }
+
+    .btn-ed-del{
+        width: 10vh;
+        height:3vh ;
+        font-size: 90%;
+       /* margin-top: 3%;*/
+    }
+
+}
+
+
+
+@media screen and (min-height: 600px) {
+
+    h1{
+        font-size: 250%;
+    }
+
+    .btn {
+        font-size: 110%;
+        padding:16px 19px;
+    }
+
+    .input-email{
+        width: 40vh;
+        height: 6vh;
+    }
+
+
+
+    .sing-up{
+        font-size: 120%;
+    }
+
+    .data-forget{
+        font-size: 120%;
+    }
+
+    .collapsible {
+        padding: 18px;
+        font-size: 120%;
+        margin-top: 3%;
+        height: 30%;
+    }
+
+
+}
