@@ -5,55 +5,89 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<link rel="stylesheet" href="css/zone.css">
+	<link rel="stylesheet" href="css/modal.css">
 	<link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Russo+One&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="css/soon.min.css" type="text/css">
-    <title>Home book</title>
+	<link href="https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap" rel="stylesheet">
+	<title>Утренняя рутина</title>
 </head>
-    <body>
-	
-	<div class="grid main">
-		<div class="head-logo">
-			<div>
-				<a href="head-menu.html"><img src="img/double-left.png" class="image-men" alt="Назад"></a>
-			</div>
-			<div>
-				<h1>Зона 1. Кухня</h1>
-				<h2>Шкафы</h2>
-			</div>
-			<div>
-			</div>
-		</div>
-		
-		<div class="ex-content">
-     <p class="zagol">Не пытайтесь выполнять весь план, пока Вы не закончили расхламление Вашей кухни.</p>
-      <p class="zagol">  Потратьте 15 минут в день на расхламление, а потом Вы можете начать делать что-то из детальной уборки. Не переживайте об этом. Вы не делали этого годами и лишний месяц ничего не испортит.</p>
-      <p class="zagol">Время: 10 минут</p>
-		</div>
+<body>
 
-	<div>
- 		<div class="soon" id="my-soon-counter"
-			 data-due="2020-02-10T20:25:00"
-			 data-layout="inline label-uppercase label-small"
-			 data-scale-max="m"
-			 data-format="m,s"
-			 data-face="slot rotate"
-			 data-visual="ring cap-round progressgradient-00fff6_075fff ring-width-custom gap-0"
-			 data-labels-minutes="Минуты,Минут"
-			 data-labels-seconds="Секунды,Секунд">
-		</div>
+<div class="grid main">
+	<div class="block-logo">
+		<div><a href="setting.html"><img src="img/setting.png" class="image-men" alt="Настройки"></a></div>
+		<div class="head-logo"><h1>HomeBook</h1></div>
+		<div></div>
 	</div>
+	<div>
+		<h2>Кухня. Зона 1</h2>
+		<p>Ваше задание:</p>
+		<p>Задание Задание Задание Задание Задание Задание Задание Задание Задание Задание Задание Задание Задание Задание Задание Задание
+			Задание Задание Задание Задание Задание Задание Задание Задание Задание Задание Задание Задание Задание Задание Задание Задание
+		</p>
+	</div>
+	<div id="timer">
+		<h3>Время:</h3>
+		<div id="hour" hidden>00</div> :
+		<div id="minute">15</div>&nbsp;:
+		<div id="second">00</div>
+	</div>
+	<div class="head-logo">
+		<input  type="submit" value="Выполнил!" class="input-email open-modal" data-modal="#modal1" >
+	</div>
+	<script>
+		function timer(){
 
-      <div>
-      <form action="">
-        <button class="btn active">Начать</button>
-      </form>
-      </div>
- 
-		
+			var hour = document.getElementById('hour').innerHTML;
+			var minute = document.getElementById('minute').innerHTML;
+			var second = document.getElementById('second').innerHTML;
+			var end = false;
+
+			if( second > 0 ) second--;
+			else{
+				second = 59;
+
+				if( minute > 0 ) minute--;
+				else{
+					second = 59;
+
+					if( hour > 0 ) hour--;
+					else end = true;
+				}
+			}
+
+			if(end){
+				clearInterval(intervalID);
+				alert("Таймер сработал!");
+			}else{
+				document.getElementById('hour').innerHTML = hour;
+				document.getElementById('minute').innerHTML = minute;
+				document.getElementById('second').innerHTML = second;
+			}
+		}
+		window.intervalID = setInterval(timer, 1000);
+	</script>
+	<div class='modal' id='modal1'>
+		<div class='content'>
+			<h2 class='title'>Выполнено</h2>
+			<p>
+				Тут будет инструкция к каждому разделу
+				Тут будет инструкция к каждому разделу
+				Тут будет инструкция к каждому разделу
+				Тут будет инструкция к каждому разделу
+				Тут будет инструкция к каждому разделу
+				Тут будет инструкция к каждому разделу
+
+			</p>
+			<div class="head-logo">
+				<a class='btn-modal close-modal' data-modal="#modal1" href="#">Понятно</a>
+			</div>
+		</div>
+	<script src="js/rutina_new.js"></script>
+		<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
+
+		<script  src="js/modal.js"></script>
 </div>
-
-<script src="js/soon.min.js"></script>
-    </body>
+</body>
 </html>
 
