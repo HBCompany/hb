@@ -13,7 +13,7 @@ function getQueryVariable(variable)
 
 let pageRut = getQueryVariable('id'); 
 const timeRoutineQuery = `{
- pageRutine (where:{id:"${pageRut}"}){
+ pageRutine (where:{id:"ck444effec68d0b73itm6ukiv"}){
     time
     rutines{
       bodyRutine
@@ -96,15 +96,6 @@ list.addEventListener('click', function(ev) {
       document.getElementById("myUL").appendChild(li);
     }
     document.getElementById("myInput").value = "";
-
-    /*let span = document.createElement("SPAN");
-    let txt = document.createTextNode("\u00D7");
-    let plus = document.createTextNode("Hello");*/
-
-   /* span.className = "close";
-    span.appendChild(plus);
-    span.appendChild(txt);
-    li.appendChild(span);*/
 
     for (i = 0; i < close.length; i++) {
       close[i].onclick = function() {
