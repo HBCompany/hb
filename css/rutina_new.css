@@ -43,8 +43,8 @@
     .image-men{
         width: 48%;
         height:40%;
-        padding-top: 37%;
-        padding-left: 17px;
+        margin-top: 28%;
+        margin-left: 26%;
     }
 
     .margin-block{
@@ -154,7 +154,7 @@
         max-height: 0;
         overflow: hidden;
         transition: max-height 0.2s ease-out;
-        background-color:#e3e3e3;
+        color:#e3e3e3;
     }
 
 
@@ -236,6 +236,10 @@
             color:black ;
     }
 
+    .input-text{
+        height: 10%;
+    }
+
 
 
     /* New Task */
@@ -246,6 +250,7 @@
     input#new-task {
         float: left;
         width: 70%;
+        height: 6vh;
         background:#e3e3e3;
         color:#8B53A6;
     }

@@ -50,7 +50,7 @@
     .image-men{
         width: 48%;
         height:40%;
-        margin-top: 30%;
+        margin-top: 40%;
         margin-left: 25%;
     }
 
@@ -95,12 +95,17 @@
     .zone-block{
         width: 98%;
         height: 100%;
+        border:1px solid #e3e3e3;
+        border-radius: 5px;
+        padding-bottom: 3%;
+        box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+
     }
 
     .menu{
         border-radius: 15px;
         border:1px solid #e3e3e3;
-        box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+        box-shadow: 4px 4px 4px 1px rgba(0, 0, 0, 0.4);
     }
 
     .menu:active{
@@ -131,17 +136,6 @@
         margin-left: 2%;
     }
 
-    .btn-modal{
-        width: 25vh;
-        height: 6vh;
-        border-radius: 30px;
-        border:none;
-        color:#8B53A6;
-        box-shadow: 0 0 10px rgba(0,0,0,0.5);
-        font-family: 'Russo One', cursive;
-        background: #e3e3e3;
-        padding-top: 3%;
-    }
 
 }
 

@@ -3,15 +3,11 @@
 @media screen and (max-width: 600px ){
 
     body{
-        background-color: #e3e3e3;
+        background-color: #8B53A6;
         height: 95%;
         width: 95%;
     }
 
-    select{
-        border:none;
-        background-color: #e3e3e3;
-    }
 
     input{
         margin-top: 15%;
@@ -55,11 +51,9 @@
         height: 100%;
     }
 
-    .main{
+    .main {
         margin: 0;
-        grid-template-rows: 0.1fr 1fr ;
-        background-color:;
-
+        grid-template-rows: 0.1fr 1fr;
     }
 
 
@@ -67,44 +61,8 @@
         display: grid;
         height: 100%;
         grid-template-columns:0.3fr 1fr 0.3fr;
-        background-color:;
     }
 
-    .data-forget{
-        margin-left: 2%;
-        font-size:15px;
-        text-align:left;
-        font-family:'Bahnschrift';
-        letter-spacing: 1px;
-        line-height: 1.2;
-        color:#8B53A6;
-    }
-
-    .sing-up{
-        padding-top:6%;
-        font-size:18px;
-        text-align: left;
-        font-family:'Corbel';
-        letter-spacing: 1.5px;
-        line-height: 1;
-        color:#8B53A6;
-    }
-
-    .marg-sing{
-        margin-top: -3px;
-        line-height: 1.2;
-    }
-
-    .zagol{
-        margin-top: 5%;
-        margin-left: 2%;
-        font-size:14px;
-        font-family:'Bahnschrift Light';
-        letter-spacing: 1px;
-        line-height: 1;
-        color:#8B53A6;
-        text-align: left;
-    }
 
 
 
@@ -130,8 +88,9 @@
         outline: none;
         font-size: 15px;
         border:1px solid #8B53A6;
-        border-radius: 10px;
+        border-radius: 5px;
         margin-top: 3px;
+        box-shadow: 0 7px 7px rgba(0,0,0,0.4);
     }
 
 
@@ -141,7 +100,7 @@
         1max-height: 0;
         overflow: hidden;
         transition: max-height 0.2s ease-out;
-        background-color: #e3e3e3;
+        background-color: #8B53A6;
         display: none;
     }
     .active{
