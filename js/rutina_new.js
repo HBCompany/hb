@@ -1,3 +1,5 @@
+const url = "https://api-euwest.graphcms.com/v1/ck3ohp7e3nq9e01ff33nm3ipb/master";
+
 var taskInput=document.getElementById("new-task");//Add a new task.
 var addButton=document.getElementsByTagName("button")[0];//first button
 var incompleteTaskHolder=document.getElementById("incomplete-tasks");//ul of #incomplete-tasks
@@ -168,3 +170,69 @@ for (var i=0; i<completedTasksHolder.children.length;i++){
     //bind events to list items chldren(tasksIncompleted)
     bindTaskEvents(completedTasksHolder.children[i],taskIncomplete);
 }
+
+
+
+// DB
+function getQueryVariable(variable)
+{
+    let query = window.location.search.substring(1);
+    let vars = query.split("&");
+    for (let i=0;i<vars.length;i++) {
+        let pair = vars[i].split("=");
+        if(pair[0] === variable){return pair[1];}
+    }
+    return(false);
+}
+
+
+let pageRut = getQueryVariable('id'); 
+const timeRoutineQuery = `{
+ pageRutine (where:{id:"${pageRut}"}){
+    time
+    rutines{
+      bodyRutine
+    }
+  }
+}`;
+
+
+
+let pageRutine = [];
+axios.post(url, {query: timeRoutineQuery})
+    .then(response => {
+        pageRutine = response.data.data.pageRutine;
+        console.log(pageRutine);
+        let time = document.getElementById("timeRut");
+        time.textContent = pageRutine.time;
+
+        let listRoutines = document.getElementById('incomplete-tasks');
+        let rutinesArr = pageRutine.rutines;
+        for(let r of rutinesArr) {
+          let li = document.createElement("li");
+          li.textContent = r.bodyRutine;
+          listRoutines.append(li);
+         
+        }
+    })
+; 
+
+  addButton.onclick = function newElement() {
+    let li = document.createElement("li");
+    let inputValue = document.getElementById("new-task").value;
+    let t = document.createTextNode(inputValue);
+    li.appendChild(t);
+    if (inputValue === '') {
+      alert("You must write something!");
+    } else {
+      document.getElementById("incomplete-tasks").appendChild(li);
+    }
+    document.getElementById("new-task").value = "";
+
+    for (i = 0; i < close.length; i++) {
+      close[i].onclick = function() {
+        let div = this.parentElement;
+        div.style.display = "none";
+      }
+    }
+    };
