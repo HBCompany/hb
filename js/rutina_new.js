@@ -10,29 +10,34 @@ var completedTasksHolder=document.getElementById("completed-tasks");//completed-
 var createNewTaskElement=function(taskString){
 
     var listItem=document.createElement("li");
+    //listItem.className = "editMode";
 
     //input (checkbox)
     var checkBox=document.createElement("input");//checkbx
     //label
     var label=document.createElement("label");//label
+
     //input (text)
     var editInput=document.createElement("input");//text
+    
     //button.edit
     var editButton=document.createElement("button");//edit button
-
+    
     //button.delete
     var deleteButton=document.createElement("button");//delete button
+    
 
     label.innerText=taskString;
 
     //Each elements, needs appending
     checkBox.type="checkbox";
     editInput.type="text";
+    editInput.className = "input-edit";
 
     editButton.innerText="Edit";//innerText encodes special characters, HTML does not.
-    editButton.className="edit";
+    editButton.className="edit input-submit btn-ed-del";
     deleteButton.innerText="Delete";
-    deleteButton.className="delete";
+    deleteButton.className="delete input-submit btn-ed-del";
 
 
 
@@ -43,21 +48,6 @@ var createNewTaskElement=function(taskString){
     listItem.appendChild(editButton);
     listItem.appendChild(deleteButton);
     return listItem;
-}
-
-
-
-var addTask=function(){
-    console.log("Add Task...");
-    //Create a new list item with the text from the #new-task:
-    var listItem=createNewTaskElement(taskInput.value);
-
-    //Append listItem to incompleteTaskHolder
-    incompleteTaskHolder.appendChild(listItem);
-    bindTaskEvents(listItem, taskCompleted);
-
-    taskInput.value="";
-
 }
 
 //Edit an existing task.
@@ -130,12 +120,6 @@ var ajaxRequest=function(){
 }
 
 //The glue to hold it all together.
-
-
-//Set the click handler to the addTask function.
-addButton.onclick=addTask;
-addButton.addEventListener("click",addTask);
-addButton.addEventListener("click",ajaxRequest);
 
 
 var bindTaskEvents=function(taskListItem,checkBoxEventHandler){
@@ -217,24 +201,21 @@ axios.post(url, {query: timeRoutineQuery})
     })
 ; 
 
-  addButton.onclick = function newElement() {
-    let li = document.createElement("li");
-    let inputValue = document.getElementById("new-task").value;
-    let t = document.createTextNode(inputValue);
-    li.appendChild(t);
-    if (inputValue === '') {
+addButton.onclick = function newElement() {
+
+    console.log("Add Task...");
+    var listItem=createNewTaskElement(taskInput.value);
+
+    //Append listItem to incompleteTaskHolder
+    bindTaskEvents(listItem, taskCompleted);
+
+    if (taskInput === '') {
       alert("You must write something!");
     } else {
-      document.getElementById("incomplete-tasks").appendChild(li);
+        incompleteTaskHolder.appendChild(listItem);
+
     }
-    document.getElementById("new-task").value = "";
-
-    let span = document.createElement("SPAN");
-    let txt = document.createTextNode("");
-
-    span.className = "close";
-    span.appendChild(txt);
-    li.appendChild(span);
+    taskInput.value = "";
 
     for (i = 0; i < close.length; i++) {
       close[i].onclick = function() {
@@ -242,4 +223,25 @@ axios.post(url, {query: timeRoutineQuery})
         div.style.display = "none";
       }
     }
-    };
+
+    let bodyRut = listItem.textContent;
+    let newRutine = `mutation createRutine{
+        createRutine(
+          data:{
+          bodyRutine:"${bodyRut}"
+          pageRutine: {connect:{id:"${pageRut}"}}
+          status: PUBLISHED
+        }) {
+          id
+        }
+      }`;
+
+    axios.post(url, {query: newRutine})
+      .then(response => {
+          console.log(response.data);
+          let createRutine = response.data.data.id; 
+          if (createRutine) {
+            alert("Изменение данных произведено успешно!");
+         }
+      });
+};
