@@ -229,6 +229,13 @@ axios.post(url, {query: timeRoutineQuery})
     }
     document.getElementById("new-task").value = "";
 
+    let span = document.createElement("SPAN");
+    let txt = document.createTextNode("");
+
+    span.className = "close";
+    span.appendChild(txt);
+    li.appendChild(span);
+
     for (i = 0; i < close.length; i++) {
       close[i].onclick = function() {
         let div = this.parentElement;
