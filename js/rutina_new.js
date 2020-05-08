@@ -193,8 +193,7 @@ axios.post(url, {query: timeRoutineQuery})
         let listRoutines = document.getElementById('incomplete-tasks');
         let rutinesArr = pageRutine.rutines;
         for(let r of rutinesArr) {
-          let li = document.createElement("li");
-          li.textContent = r.bodyRutine;
+          let li = createNewTaskElement(r.bodyRutine);
           listRoutines.append(li);
          
         }
@@ -241,7 +240,7 @@ addButton.onclick = function newElement() {
           console.log(response.data);
           let createRutine = response.data.data.id; 
           if (createRutine) {
-            alert("Изменение данных произведено успешно!");
+            console.log("Изменение данных произведено успешно!");
          }
       });
 };
