@@ -22,10 +22,19 @@
     }
 
     h2{
-        font-size:18px;
+        font-size:16px;
         text-align:center;
-        font-family:'Yu Gothic UI Semibold';
-        color:black;
+        font-family: 'Russo One', cursive;
+        color:#e3e3e3;
+        margin-top: 7%;
+    }
+
+    p{
+        font-size:14px;
+        text-align:left;
+        font-family: 'Russo One', cursive;
+        color:#e3e3e3;
+        margin-left: 3%;
     }
 
     a{
@@ -40,9 +49,9 @@
 
     .image-men{
         width: 50%;
-        height:45%;
-        padding-top: 23%;
-        padding-left: 20%;
+        height:62%;
+        margin-top: 17%;
+        margin-left: 15%;
     }
 
 
@@ -107,12 +116,102 @@
         display: block;
     }
 
+    .switch {
+        position: relative;
+        display: inline-block;
+        width: 40px;
+        height: 25px;
+    }
+
+    /* Hide default HTML checkbox */
+    .switch input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+
+    /* The slider */
+    .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+        -webkit-transition: .4s;
+        transition: .4s;
+    }
+
+    .slider:before {
+        position: absolute;
+        content: "";
+        height: 16px;
+        width: 16px;
+        left: 4px;
+        bottom: 6px;
+        background-color: white;
+        -webkit-transition: .4s;
+        transition: .4s;
+    }
+
+    input:checked + .slider {
+        background-color: #2196F3;
+    }
+
+    input:focus + .slider {
+        box-shadow: 0 0 1px #2196F3;
+    }
+
+    input:checked + .slider:before {
+        -webkit-transform: translateX(12px);
+        -ms-transform: translateX(12px);
+        transform: translateX(12px);
+    }
+
+    /* Rounded sliders */
+    .slider.round {
+        border-radius: 34px;
+        margin-top: -5%;
+        margin-left: 10%    ;
+    }
+
+    .slider.round:before {
+        border-radius: 50%;
+    }
+
+    .check-box-margin{
+        margin-top: -12%;
+        margin-left: 79%;
+    }
+
 }
 
 @media screen and (min-height: 600px) {
 
     h2{
         font-size: 120%;
+    }
+
+    p{
+        font-size:100%;
+    }
+
+    .check-box-margin{
+        margin-top: -11%;
+        margin-left: 75%;
+    }
+
+    .slider:before {
+        height: 22px;
+        width: 22px;
+        left: 4px;
+        bottom: 6px;
+    }
+
+    .switch {
+        width: 50px;
+        height: 30px;
     }
 
     .btn {
