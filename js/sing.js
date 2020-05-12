@@ -1,12 +1,12 @@
-  function statusChangeCallback(response) {  
+  /*function statusChangeCallback(response) {
     console.log('statusChangeCallback');
     console.log(response);                   
     if (response.status === 'connected') {  
       testAPI();  
   };
   }
-
-
+*/
+/*
   function checkLoginState() {              
     FB.getLoginStatus(function(response) {   
       statusChangeCallback(response);
@@ -27,9 +27,9 @@
       statusChangeCallback(response);       
     });
   };
+*/
 
-
-  
+ /*
   (function(d, s, id) {                     
     var js, fjs = d.getElementsByTagName(s)[0];
     if (d.getElementById(id)) return;
@@ -46,5 +46,4 @@
       window.location.replace("head-menu.html");
     });
   }
-
-  
+*/

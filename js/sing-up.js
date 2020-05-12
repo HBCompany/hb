@@ -1,4 +1,4 @@
-  function statusChangeCallback(response) {  
+ /* function statusChangeCallback(response) {
     console.log('statusChangeCallback');
     console.log(response);                   
     if (response.status === 'connected') {  
@@ -46,3 +46,4 @@
       window.location.replace("question.html?p=1");
     });
   }
+*/
