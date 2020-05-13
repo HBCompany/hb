@@ -13,6 +13,13 @@
 	<link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Kanit&display=swap" rel="stylesheet">
 	<link rel="manifest" href="./manifest.json">
+	<link rel="script" href="./pwabuilder-sw.js">
+	<script>
+		import 'https://cdn.jsdelivr.net/npm/@pwabuilder/pwaupdate';
+
+		const el = document.createElement('pwa-update');
+		document.body.appendChild(el);
+	</script>
     <title>Sing up</title>
 </head>
     <body>
