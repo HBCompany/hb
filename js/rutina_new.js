@@ -221,7 +221,7 @@ addButton.onclick = function newElement() {
       }
     }
 
-    let bodyRut = listItem.parentNode.textContent;
+    let bodyRut = listItem.textContent;
     let newRutine = `mutation createRutine{
         createRutine(
           data:{
