@@ -26,7 +26,6 @@ var createNewTaskElement=function(taskString){
     //button.delete
     var deleteButton=document.createElement("button");//delete button
     
-
     label.innerText=taskString;
 
     //Each elements, needs appending
@@ -38,8 +37,6 @@ var createNewTaskElement=function(taskString){
     editButton.className="edit input-submit btn-ed-del";
     deleteButton.innerText="Delete";
     deleteButton.className="delete input-submit btn-ed-del";
-
-
 
     //and appending.
     listItem.appendChild(checkBox);
@@ -193,7 +190,8 @@ axios.post(url, {query: timeRoutineQuery})
         let listRoutines = document.getElementById('incomplete-tasks');
         let rutinesArr = pageRutine.rutines;
         for(let r of rutinesArr) {
-          let li = createNewTaskElement(r.bodyRutine);
+          let li = document.createElement("li");
+          li.textContent = r.bodyRutine;
           listRoutines.append(li);
          
         }
@@ -223,7 +221,7 @@ addButton.onclick = function newElement() {
       }
     }
 
-    let bodyRut = listItem.lable.textContent;
+    let bodyRut = listItem.textContent;
     let newRutine = `mutation createRutine{
         createRutine(
           data:{
