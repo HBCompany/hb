@@ -12,10 +12,11 @@
     }
 
     h1{
-        font-size:32px;
+        font-size:16px;
         text-align:center;
-        font-family: 'Permanent Marker', cursive;
+        font-family: 'Russo One', cursive;
         color:#e3e3e3;
+        margin-top: 22%;
     }
 
     h2{
@@ -336,7 +337,7 @@
 @media screen and (min-height: 600px) {
 
     h1{
-        font-size: 250%;
+        font-size: 120%;
     }
 
     .btn {

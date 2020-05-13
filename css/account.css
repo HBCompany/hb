@@ -9,24 +9,23 @@
     }
 
 
-    input{
-        margin-top: 15%;
-        padding-top: 3%;
-        width: 90%;
-        height: 40%;
-        font-family:'Bahnschrift';
-        border-radius: 10px;
-        border:none;
-        color:#8B53A6;
-        background-color:#d10073;
-    }
 
     h2{
         font-size:16px;
         text-align:center;
         font-family: 'Russo One', cursive;
         color:#e3e3e3;
-        margin-top: 7%;
+        margin-top: 8%;
+        letter-spacing: 2px;
+    }
+
+    h3{
+        font-size:16px;
+        text-align:left;
+        font-family: 'Russo One', cursive;
+        color:#e3e3e3;
+        border-bottom: 1px solid #e3e3e3;
+        letter-spacing: 2px;
     }
 
     p{
@@ -46,6 +45,21 @@
         margin-top: 9%;
     }
 
+    .imgcontainer {
+
+        text-align: center;
+        margin: 24px 0 12px 0;
+    }
+
+    /* Avatar image */
+    img.avatar {
+        background: white;
+        width: 30%;
+        border-radius: 50%;
+        border: 2px solid #e3e3e3;
+    }
+
+
 
     .image-men{
         width: 50%;
@@ -62,7 +76,7 @@
 
     .main {
         margin: 0;
-        grid-template-rows: 0.1fr 1fr;
+        grid-template-rows: 0.1fr 0.3fr 1fr;
     }
 
 
@@ -72,16 +86,14 @@
         grid-template-columns:0.3fr 1fr 0.3fr;
     }
 
-
-
-
-    .input-email{
-        width: 250px;
-        height: 35px;
-        border-radius: 7px;
-        border:none;
-        box-shadow: 0 7px 7px rgba(0,0,0,0.4);
+    .head-logo{
+        display:flex;
+        flex-direction: column;
+        margin-top: 15%;
+        align-items: center;
     }
+
+
 
 
 
@@ -102,87 +114,28 @@
         box-shadow: 0 7px 7px rgba(0,0,0,0.4);
     }
 
-
-
-    .content {
-        padding: 0 18px;
-        1max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.2s ease-out;
-        background-color: #8B53A6;
-        display: none;
-    }
-    .active{
-        display: block;
+    .input-email{
+        width: 17vh;
+        height: 6vh;
+        border-radius: 30px;
+        color:#8B53A6;
+        box-shadow: 0 0 10px rgba(0,0,0,0.5);
+        font-family: 'Russo One', cursive;
+        border: 2px solid #8B53A6;
+        background: #e3e3e3;
+        margin-top: -13%;
     }
 
-    .switch {
-        position: relative;
+    .input-data{
+        width: 90%;
+        padding: 12px;
+        border: none;
+        border-radius: 4px;
+        margin: 5px 0;
+        opacity: 0.85;
         display: inline-block;
-        width: 40px;
-        height: 25px;
-    }
-
-    /* Hide default HTML checkbox */
-    .switch input {
-        opacity: 0;
-        width: 0;
-        height: 0;
-    }
-
-    /* The slider */
-    .slider {
-        position: absolute;
-        cursor: pointer;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: #ccc;
-        -webkit-transition: .4s;
-        transition: .4s;
-    }
-
-    .slider:before {
-        position: absolute;
-        content: "";
-        height: 16px;
-        width: 16px;
-        left: 4px;
-        bottom: 6px;
-        background-color: white;
-        -webkit-transition: .4s;
-        transition: .4s;
-    }
-
-    input:checked + .slider {
-        background-color: #2196F3;
-    }
-
-    input:focus + .slider {
-        box-shadow: 0 0 1px #2196F3;
-    }
-
-    input:checked + .slider:before {
-        -webkit-transform: translateX(12px);
-        -ms-transform: translateX(12px);
-        transform: translateX(12px);
-    }
-
-    /* Rounded sliders */
-    .slider.round {
-        border-radius: 34px;
-        margin-top: -5%;
-        margin-left: 10%    ;
-    }
-
-    .slider.round:before {
-        border-radius: 50%;
-    }
-
-    .check-box-margin{
-        margin-top: -12%;
-        margin-left: 79%;
+        line-height: 20px;
+        text-decoration: none; /* remove underline from anchors */
     }
 
 }
