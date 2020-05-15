@@ -22,62 +22,11 @@
 				</div>
 			</div>
 			<div class="head-logo">
-				<div class="sim-slider">
-					<ul class="sim-slider-list">
-						<li><img src="http://pvbk.spb.ru/inc/slider/imgs/no-image.gif" alt="screen"></li> <!-- это экран -->
-						<li class="sim-slider-element ">
-							<div>
-								<h2>Здравствуйте, Мария</h2>
-								<p>Добро пожаловать в HOMEBOOK</p>
-							<p>Добро пожаловать в HOMEBOOK</p>
-								<a href="head-menu.html"><input type="submit" value="Перейти" class="input-submit" ></a>
-							</div>
-						</li>
-						<li class="sim-slider-element">
-							<div class="slider-element">
-								<h2>Вы забыли убрать кухню</h2>
-								<p>Сделайте это сейчас!</p>
-								<p>Сделайте это сейчас!</p>
-								<a href="head-menu.html"><input type="submit" value="Перейти" class="input-submit" ></a>
-							</div>
-						</li>
-						<li class="sim-slider-element">
-							<div class="slider-element">
-								<h2>Задание недели ждёт Вас!</h2>
-								<p>Персональное задание уже здесь!</p>
-								<p>Сделайте это сейчас!</p>
-								<a href="head-menu.html"><input type="submit" value="Перейти" class="input-submit" ></a>
-							</div>
-						</li>
-						<li class="sim-slider-element">
-							<div class="slider-element">
-								<h2>Здравствуйте, Артем</h2>
-								<p>Добро пожаловать в HOMEBOOK</p>
-								<p>Сделайте это сейчас!</p>
-								<a href="head-menu.html"><input type="submit" value="Перейти" class="input-submit" ></a>
-							</div>
-						</li>
-						<li class="sim-slider-element">
-							<div class="slider-element">
-								<h2>Здравствуйте, Артем</h2>
-								<p>Добро пожаловать в HOMEBOOK</p>
-								<p>Сделайте это сейчас!</p>
-								<a href="head-menu.html"><input type="submit" value="Перейти" class="input-submit" ></a>
-							</div>
-						</li>
-						<li class="sim-slider-element">
-							<div class="slider-element">
-								<h2>Здравствуйте, Артем</h2>
-								<p>Добро пожаловать в HOMEBOOK</p>
-								<p>Сделайте это сейчас!</p>
-								<a href="head-menu.html"><input type="submit" value="Перейти" class="input-submit" ></a>
-							</div>
-						</li>
-					</ul>
-					<!--<div class="sim-slider-arrow-left color" hidden></div>
-					<div class="sim-slider-arrow-right" hidden></div>-->
-					<div class="sim-slider-dots"></div>
-				</div>
+				<ul id="slides">
+					<li class="slide showing">Slide 1</li>
+					<li class="slide"></li>
+					<li class="slide">Slide 3</li>
+				</ul>
 			</div>
 			<div class="menu-box">
 				<div id="myBtnContainer">
@@ -136,6 +85,40 @@
 			</div>
 		</div>
 	</div>
+	<script>
+
+		var slides = document.querySelectorAll('#slides .slide');
+		var currentSlide = 0;
+		var slideInterval = setInterval(nextSlide,5000);
+
+
+		var next = document.getElementById('next');
+		var previous = document.getElementById('previous');
+
+		next.onclick = function() {
+			pauseSlideshow();
+			nextSlide();
+		};
+		previous.onclick = function() {
+			pauseSlideshow();
+			previousSlide();
+		};
+
+		function nextSlide() {
+			goToSlide(currentSlide+1);
+		}
+
+		function previousSlide() {
+			goToSlide(currentSlide-1);
+		}
+
+		function goToSlide(n) {
+			slides[currentSlide].className = 'slide';
+			currentSlide = (n+slides.length)%slides.length;
+			slides[currentSlide].className = 'slide showing';
+		}
+
+	</script>
 	<script src="js/head-menu.js"></script>
     </body>
 </html>
