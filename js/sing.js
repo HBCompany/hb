@@ -49,6 +49,8 @@
 */
 const url = "https://api-euwest.graphcms.com/v1/ck3ohp7e3nq9e01ff33nm3ipb/master";
 
+let singBut = document.getElementById("singBut");
+
 function registration() {
   let nameUs = document.getElementById("name").value;
   //let logiUs = document.getElementById("email").value;
@@ -74,7 +76,7 @@ function registration() {
     });
 }
 
-function entry() {
+singBut.onclick =  function entry() {
   let logiUs = document.getElementById("email_").value;
   let passUs = MD5(document.getElementById("password_").value);
   console.log(logiUs);
