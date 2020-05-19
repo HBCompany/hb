@@ -74,6 +74,8 @@ singUpBut.onclick = function registration() {
             alert("Изменение данных произведено успешно!");
       } 
     });
+
+  document.location.href = "question.html";
 }
 
 singInBut.onclick =  function entry() {
@@ -100,6 +102,7 @@ singInBut.onclick =  function entry() {
     })
   ; 
 }
+
 
 
 
