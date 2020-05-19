@@ -49,9 +49,10 @@
 */
 const url = "https://api-euwest.graphcms.com/v1/ck3ohp7e3nq9e01ff33nm3ipb/master";
 
-let singBut = document.getElementById("singBut");
+let singInBut = document.getElementById("singInBut");
+let singUpBut = document.getElementById("singUpBut");
 
-function registration() {
+singUpBut.onclick = function registration() {
   let nameUs = document.getElementById("name").value;
   //let logiUs = document.getElementById("email").value;
   let passUs = MD5(document.getElementById("password").value);
@@ -65,7 +66,6 @@ function registration() {
       id
     }
   }`;//login:"${logiUs}"
-
   axios.post(url, {query: newUser})
     .then(response => {
       console.log(response.data);
@@ -76,7 +76,7 @@ function registration() {
     });
 }
 
-singBut.onclick =  function entry() {
+singInBut.onclick =  function entry() {
   let logiUs = document.getElementById("email_").value;
   let passUs = MD5(document.getElementById("password_").value);
   console.log(logiUs);
