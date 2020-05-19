@@ -75,7 +75,7 @@ singUpBut.onclick = function registration() {
       } 
     });
 
-  document.location.href = "question.html";
+  document.location.href = "https://hbcompany.github.io/hb.github.io/question.html";
 }
 
 singInBut.onclick =  function entry() {
