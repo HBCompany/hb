@@ -13,7 +13,7 @@ function getQueryVariable(variable)
 
 let pageRut = getQueryVariable('id'); 
 const timeRoutineQuery = `{
- pageRutine (where:{id:"ck444effec68d0b73itm6ukiv"}){
+ pageRutine (where:{id:"${pageRut}"}){
     time
     rutines{
       bodyRutine
