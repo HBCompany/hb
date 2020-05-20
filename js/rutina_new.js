@@ -7,24 +7,24 @@ var completedTasksHolder=document.getElementById("completed-tasks");//completed-
 
 
 //New task list item
-var createNewTaskElement=function(taskString){
+let createNewTaskElement=function(taskString){
 
-    var listItem=document.createElement("li");
+    let listItem=document.createElement("li");
     //listItem.className = "editMode";
 
     //input (checkbox)
-    var checkBox=document.createElement("input");//checkbx
+    let checkBox=document.createElement("input");//checkbx
     //label
-    var label=document.createElement("label");//label
+    let label=document.createElement("label");//label
 
     //input (text)
-    var editInput=document.createElement("input");//text
+    let editInput=document.createElement("input");//text
     
     //button.edit
-    var editButton=document.createElement("input");//edit button
+    let editButton=document.createElement("input");//edit button
     
     //button.delete
-    var deleteButton=document.createElement("input");//delete button
+    let deleteButton=document.createElement("input");//delete button
     
     label.innerText=taskString;
 
@@ -35,7 +35,7 @@ var createNewTaskElement=function(taskString){
 
     editButton.innerText="";//innerText encodes special characters, HTML does not.
     editButton.className="edit input-submit btn-ed-del";
-    deleteButton.innerText="пше";
+    deleteButton.innerText="";
     deleteButton.className="delete input-submit btn-ed-del";
 
     //and appending.
@@ -49,16 +49,16 @@ var createNewTaskElement=function(taskString){
 
 //Edit an existing task.
 
-var editTask=function(){
+let editTask=function(){
     console.log("Edit Task...");
     console.log("Change 'edit' to 'save'");
 
 
-    var listItem=this.parentNode;
+    let listItem=this.parentNode;
 
-    var editInput=listItem.querySelector('input[type=text]');
-    var label=listItem.querySelector("label");
-    var containsClass=listItem.classList.contains("editMode");
+    let editInput=listItem.querySelector('input[type=text]');
+    let label=listItem.querySelector("label");
+    let containsClass=listItem.classList.contains("editMode");
     //If class of the parent is .editmode
     if(containsClass){
 
@@ -193,7 +193,7 @@ axios.post(url, {query: timeRoutineQuery})
           let li = document.createElement("li");
           li.textContent = r.bodyRutine;
           listRoutines.append(li);
-         
+
         }
     })
 ; 
