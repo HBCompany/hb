@@ -21,10 +21,10 @@ var createNewTaskElement=function(taskString){
     var editInput=document.createElement("input");//text
     
     //button.edit
-    var editButton=document.createElement("button");//edit button
+    var editButton=document.createElement("input");//edit button
     
     //button.delete
-    var deleteButton=document.createElement("button");//delete button
+    var deleteButton=document.createElement("input");//delete button
     
     label.innerText=taskString;
 
@@ -123,8 +123,8 @@ var bindTaskEvents=function(taskListItem,checkBoxEventHandler){
     console.log("bind list item events");
 //select ListItems children
     var checkBox=taskListItem.querySelector("input[type=checkbox]");
-    var editButton=taskListItem.querySelector("button.edit");
-    var deleteButton=taskListItem.querySelector("button.delete");
+    var editButton=taskListItem.querySelector("input.edit");
+    var deleteButton=taskListItem.querySelector("input.delete");
 
 
     //Bind editTask to edit button.

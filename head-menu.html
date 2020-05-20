@@ -21,11 +21,23 @@
 					<a href="setting.html"><img src="img/setting.png" class="image-men" alt="Настройки"></a>
 				</div>
 			</div>
-			<div class="head-logo">
-				<ul id="slides">
-					<li class="slide showing">Slide 1</li>
-					<li class="slide"></li>
-					<li class="slide">Slide 3</li>
+			<div class="">
+				<ul id="slides ">
+                    <li class="slide showing">
+                        <h3>Привет!</h3>
+                        <p>Присоеденяйся к нам!Присоеденяйся к нам!Присоеденяйся к нам!Присоеденяйся к нам!</p>
+                        <button class="input-submit">Перейти</button>
+                    </li>
+					<li class="slide">
+                        <h3>Hello</h3>
+                        <p>Присоеденяйся к нам!Присоеденяйся к нам!Присоеденяйся к нам!Присоеденяйся к нам!</p>
+                        <button class="input-submit">Перейти</button>
+                    </li>
+					<li class="slide">
+                        <h3>Bonjour</h3>
+                        <p>Присоеденяйся к нам!Присоеденяйся к нам!Присоеденяйся к нам!Присоеденяйся к нам!</p>
+                        <button class="input-submit">Перейти</button>
+                    </li>
 				</ul>
 			</div>
 			<div class="menu-box">
@@ -85,40 +97,6 @@
 			</div>
 		</div>
 	</div>
-	<script>
-
-		var slides = document.querySelectorAll('#slides .slide');
-		var currentSlide = 0;
-		var slideInterval = setInterval(nextSlide,5000);
-
-
-		var next = document.getElementById('next');
-		var previous = document.getElementById('previous');
-
-		next.onclick = function() {
-			pauseSlideshow();
-			nextSlide();
-		};
-		previous.onclick = function() {
-			pauseSlideshow();
-			previousSlide();
-		};
-
-		function nextSlide() {
-			goToSlide(currentSlide+1);
-		}
-
-		function previousSlide() {
-			goToSlide(currentSlide-1);
-		}
-
-		function goToSlide(n) {
-			slides[currentSlide].className = 'slide';
-			currentSlide = (n+slides.length)%slides.length;
-			slides[currentSlide].className = 'slide showing';
-		}
-
-	</script>
 	<script src="js/head-menu.js"></script>
     </body>
 </html>
