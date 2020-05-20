@@ -33,9 +33,9 @@ var createNewTaskElement=function(taskString){
     editInput.type="text";
     editInput.className = "input-edit";
 
-    editButton.innerText="Edit";//innerText encodes special characters, HTML does not.
+    editButton.innerText="";//innerText encodes special characters, HTML does not.
     editButton.className="edit input-submit btn-ed-del";
-    deleteButton.innerText="Delete";
+    deleteButton.innerText="пше";
     deleteButton.className="delete input-submit btn-ed-del";
 
     //and appending.
