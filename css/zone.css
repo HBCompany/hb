@@ -5,40 +5,60 @@
 
     }
 
+    @font-face {
+        font-family: 'Montserrat' ;
+        src: url("../fonts/Montserrat-Light.ttf");
+    }
 
     input{
         text-align: center;
-        font-family: 'Play', sans-serif;
+        font-family: 'Montserrat' ;
+        letter-spacing: 1px;
     }
 
     h1{
         font-size:32px;
         text-align:center;
-        font-family: 'Permanent Marker', cursive;
+        font-family: 'Montserrat' ;
         color:#e3e3e3;
+        letter-spacing: 1px;
     }
 
     h2{
         font-size:16px;
         text-align:left;
-        font-family: 'Russo One', cursive;
+        font-family: 'Montserrat' ;
         color:#e3e3e3;
         margin-left: 8%;
         margin-top: 25%;
+        letter-spacing: 1px;
     }
 
     h3{
         font-size:16px;
-        text-align:center;
+        text-align:left;
         font-family: 'Russo One', cursive;
+        margin-left: 8%;
+        color:#8B53A6;
+        letter-spacing: 1px;
     }
 
     p{
         margin-left: 8%;
         font-size:16px;
         text-align:left;
-        color:#e3e3e3;
+        color:#8B53A6;
+        font-family: 'Montserrat' ;
+        letter-spacing: 1px;
+    }
+
+    .time{
+        font-size:16px;
+        text-align:center;
         font-family: 'Russo One', cursive;
+        margin-left: 8%;
+        color:#e3e3e3;
+        letter-spacing: 1px;
     }
 
 
@@ -116,6 +136,13 @@
         color:#e3e3e3;
     }
 
+    .content{
+        background: #e3e3e3;
+        border-radius: 10px;
+        color: #8B53A6;
+        box-shadow: 0 0 7px rgba(0, 0, 0, 0.5);
+    }
+
     .input-email{
         width: 25vh;
         height: 6vh;
@@ -123,9 +150,10 @@
         border:none;
         color:#8B53A6;
         box-shadow: 0 0 10px rgba(0,0,0,0.5);
-        font-family: 'Russo One', cursive;
+        font-family: 'Montserrat' ;
         margin-left: 2%;
         margin-top: 8%;
+        border-bottom: 4px solid #9e7676;
     }
 
     .marg-sing{
@@ -137,7 +165,7 @@
         margin: 20px auto;
         text-align: center;
         color: #e3e3e3;
-        font-family: fantasy;
+        font-family: 'Montserrat' ;
         font-size: 40px;
         cursor: default;
     }
