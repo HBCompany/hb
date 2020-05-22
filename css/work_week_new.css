@@ -1,48 +1,54 @@
 
-@media screen and (max-width: 812px ){
+@media (max-height: 1366px) {
     body{
         background-color: #8B53A6;
 
     }
 
+    @font-face {
+        font-family: 'Montserrat' ;
+        src: url("../fonts/Montserrat-Light.ttf");
+    }
+
 
     input{
         text-align: center;
-        font-family: 'Play', sans-serif;
+        font-family: 'Montserrat' ;
+        letter-spacing: 1px;
     }
 
     h1{
         font-size:16px;
         text-align:center;
-        font-family: 'Russo One', cursive;
+        font-family: 'Montserrat' ;
         color:#e3e3e3;
         margin-top: 22%;
-        letter-spacing: 2px;
+        letter-spacing: 1px;
     }
 
     h2{
         font-size:16px;
         text-align:left;
         font-family: 'Russo One', cursive;
-        color:#e3e3e3;
+        color:#8B53A6;
         margin-left: 3%;
-        letter-spacing: 2px;
+        letter-spacing: 1px;
     }
 
     h3{
         font-size:16px;
         text-align:center;
-        font-family: 'Russo One', cursive;
-        color:#8B53A6;
-        letter-spacing: 2px;
+        font-family: 'Montserrat' ;
+        color:#e3e3e3;
+        letter-spacing: 1px;
     }
 
     p{
-        font-size:13px;
+        font-size:14px;
         text-align:left;
-        color:#e3e3e3;
-        font-family: 'Russo One', cursive;
-        letter-spacing: 2px;
+        color:#8B53A6;
+        font-family: 'Montserrat' ;
+        letter-spacing: 1vh;
         margin-left: 3%;
     }
 
@@ -61,7 +67,7 @@
     }
 
     .margin-block{
-        margin-top: -10%;
+        margin-top: -7%;
     }
 
     .grid{
@@ -98,10 +104,15 @@
     }
 
     .head-block{
+        background: #e3e3e3;
+        color:#8B53A6;
+        border-radius: 10px;
+        height: 35vh;
+        margin-top: 5%;
     }
 
     .content-block{
-        background: #e3e3e3 ;
+        background:  ;
         margin-top: 3%;
     }
 
@@ -117,40 +128,8 @@
         letter-spacing: 2px;
     }
 
-    .menu:active{
-        border-radius: 15px;
-        background-color: green;
-        box-shadow: none;
-    }
 
 
-    .opac{
-        opacity: 0.6;
-    }
-
-    .sing-up{
-        font-size:100%;
-        text-align: center;
-        font-family: 'Pacifico', cursive;
-        letter-spacing: 1px;
-        line-height: 1;
-        color:#e3e3e3;
-    }
-
-    .marg-sing{
-        margin-top: -3px;
-        line-height: 1.2;
-    }
-
-    .padd{
-        margin-top: -11px;
-        font-size:12px;
-        text-align: center;
-        font-family:'Bahnschrift';
-        letter-spacing: 1px;
-        line-height: 1;
-        color:#e3e3e3;
-    }
 
 
     .input-email{
@@ -161,26 +140,6 @@
         box-shadow: 0 7px 7px rgba(0,0,0,0.4);
     }
 
-    .block-arrow:active{
-        border-radius: 15px;
-        background-color: green;
-    }
-
-    .collapsible {
-        background-color:#8B53A6;
-        font-family: 'Play', sans-serif;
-        color: #e3e3e3;
-        cursor: pointer;
-        padding: 15px;
-        width: 100%;
-        border: none;
-        text-align: left;
-        outline: none;
-        font-size: 15px;
-        border:1px solid #e3e3e3;
-        border-radius: 10px;
-        margin-top: 3px;
-    }
 
     .content {
         padding: 0 18px;
@@ -244,10 +203,11 @@
     /* Heading */
     h3,
     label[for='new-task'] {
-        color:#8B53A6;
+        color:#e3e3e3;
         font-weight: 700;
         font-size: 15px;
-        border-bottom: 2px solid #8B53A6;
+        text-align: left;
+        border-bottom: 2px solid #e3e3e3;
         padding: 30px 0 10px;
         margin: 0;
         text-transform: uppercase;
@@ -259,10 +219,10 @@
         height: 18px;
         padding: 10px;
         border: none;
-        background:#e3e3e3 ;
+        background:#8B53A6;
         border-radius: 20px;
         font-family: Lato, sans-serif;
-        color: #8B53A6;
+        color: #e3e3e3;
     }
     input[type="text"]:focus {
         color:black ;
@@ -283,8 +243,8 @@
         float: left;
         width: 50%;
         height: 6vh;
-        background:#e3e3e3;
-        color:#8B53A6;
+        background:;
+        color:#e3e3e3;
     }
     p > button:hover {
         color: #0FC57C;
@@ -319,50 +279,41 @@
     /* Completed */
     #completed-tasks label {
         text-decoration: line-through;
-        color: #8B53A6;
+        color: #e3e3e3;
     }
 
     /* Edit Task */
     ul li input[type=text] {
         display:none;
+        font-family: 'Montserrat' ;
     }
 
     ul li.editMode input[type=text] {
         display:block;
+        font-family: 'Montserrat' ;
     }
 
     ul li.editMode label {
         display:none;
+        font-family: 'Montserrat' ;
     }
 
-    .input-submit{
-        width: 20vh;
-        height:5.5vh ;
-        border:none;
-        background-color:#e3e3e3;
-        color:#8B53A6;
-        border-radius: 30px;
-        font-size: 100%;
-        box-shadow: 0 0 10px rgba(0,0,0,0.5);
-        margin-left: 60%;
-        margin-top: -2%;
+    .input-submit {
+        display: block;
+        width: 51vh;
+        height:6vh;
+        border: none;
+        background-color: #8B53A6;
+        color: #e3e3e3;
+        border-radius: 10px;
+        font-size: 16px;
+        margin-left: 2.3%;
+        margin-top:7%;
+        border-bottom: 4px solid #712a5e;
+        letter-spacing: 1px;
+        font-family: 'Montserrat';
     }
 
-    .input-edit{
-        height: 10%;
-    }
-
-    #inp-color{
-        background: #e3e3e3;
-    }
-
-    .btn-ed-del{
-        width: 10vh;
-        height:3vh ;
-        font-size: 90%;
-        margin-top: 0;
-        margin-left: 20%;
-    }
 
     .custom-checkbox {
         position: absolute;
@@ -426,14 +377,9 @@
         height:40%;
     }
 
-
-
-    .sing-up{
-        font-size: 120%;
-    }
-
-    .data-forget{
-        font-size: 120%;
+    .input-submit{
+        margin-top: 13%;
+        margin-left: 2.6%;
     }
 
     .collapsible {
@@ -444,4 +390,11 @@
     }
 
 
+}
+
+@media (max-height: 800px) and (min-height: 668px){
+    .input-submit{
+        margin-top: 17%;
+        margin-left: 2.7%;
+    }
 }

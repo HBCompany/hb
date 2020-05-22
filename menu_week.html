@@ -21,56 +21,109 @@
         <div><a href="#" class=' open-modal' data-modal="#modal1"><img src="img/instr.png" class="image-men" alt="Инструкция"></a></div>
     </div>
     <div class="margin-block">
-
-        <h3>Понедельник</h3>
-        <div>
-        <h4>Завтрак</h4>
-            <select>
-                <option>Пункт 1</option>
-                <option>Пункт 2</option>
-            </select>
-        </div>
-        <div>
-            <h4>Обед</h4>
-            <select>
-                <option>Пункт 1</option>
-                <option>Пункт 2</option>
-            </select>
+        <div id="myBtnContainer">
+            <button class="btn active" onclick="filterSelection('Pn')">Пн</button>
+            <button class="btn" onclick="filterSelection('Vt')">Вт</button>
+            <button class="btn" onclick="filterSelection('Sr')">Ср</button>
+            <button class="btn" onclick="filterSelection('Cht')">Чт</button>
+            <button class="btn" onclick="filterSelection('Pt')">Пт</button>
+            <button class="btn btn-center" onclick="filterSelection('Sb')">Сб</button>
+            <button class="btn btn-center" onclick="filterSelection('Nd')">Нд</button>
         </div>
 
-        <div>
-            <h4>Ужин</h4>
-            <select>
-                <option>Пункт 1</option>
-                <option>Пункт 2</option>
-            </select>
-        </div>
-        <div>
-            <h4>Десерт</h4>
-            <div class="check-box">
-                <input type="checkbox" class="custom-checkbox" id="happy" name="happy" value="yes">
-                <label for="happy">Happy</label>
-                <input type="checkbox" class="custom-checkbox" id="hello" name="hello" value="yes">
-                <label for="hello">Happy</label>
-                <input type="checkbox" class="custom-checkbox" id="world" name="world" value="yes">
-                <label for="world">Happy</label>
+
+        <div class="row">
+            <div class="column Pn">
+            <div class="content">
+                <h3>Понедельник</h3>
+                <h4>Завтрак</h4>
+                <input type="text" class="input-email" value="" placeholder="Введите блюдо">
+                <h4>Обед</h4>
+                <input type="text" class="input-email" value="" placeholder="Введите блюдо">
+                <h4>Ужин</h4>
+                <input type="text" class="input-email" value="" placeholder="Введите блюдо">
             </div>
         </div>
-        <div>
-            <h4>Напиток</h4>
-            <div class="check-box">
-                <input type="checkbox" class="custom-checkbox" id="tea" name="tea" value="yes">
-                <label for="tea">Чай</label>
-                <input type="checkbox" class="custom-checkbox" id="coff" name="coff" value="yes">
-                <label for="coff">Кофе</label>
-                <input type="checkbox" class="custom-checkbox" id="water" name="water" value="yes">
-                <label for="water">Вода</label>
+
+            <div class="column Vt">
+                <div class="content">
+                    <h3>Вторник</h3>
+                    <h4>Завтрак</h4>
+                    <input type="text" class="input-email" value="" placeholder="Введите блюдо">
+                    <h4>Обед</h4>
+                    <input type="text" class="input-email" value="" placeholder="Введите блюдо">
+                    <h4>Ужин</h4>
+                    <input type="text" class="input-email" value="" placeholder="Введите блюдо">
+                </div>
+            </div>
+
+            <div class="column Sr">
+                <div class="content">
+                    <h3>Среда</h3>
+                    <h4>Завтрак</h4>
+                    <input type="text" class="input-email" value="" placeholder="Введите блюдо">
+                    <h4>Обед</h4>
+                    <input type="text" class="input-email" value="" placeholder="Введите блюдо">
+                    <h4>Ужин</h4>
+                    <input type="text" class="input-email" value="" placeholder="Введите блюдо">
+                </div>
+            </div>
+            <div class="column Cht">
+                <div class="content">
+                    <h3>Четверг</h3>
+                    <h4>Завтрак</h4>
+                    <input type="text" class="input-email" value="" placeholder="Введите блюдо">
+                    <h4>Обед</h4>
+                    <input type="text" class="input-email" value="" placeholder="Введите блюдо">
+                    <h4>Ужин</h4>
+                    <input type="text" class="input-email" value="" placeholder="Введите блюдо">
+                </div>
+            </div>
+
+            <div class="column Pt">
+                <div class="content">
+                    <h3>Пятница</h3>
+                    <h4>Завтрак</h4>
+                    <input type="text" class="input-email" value="" placeholder="Введите блюдо">
+                    <h4>Обед</h4>
+                    <input type="text" class="input-email" value="" placeholder="Введите блюдо">
+                    <h4>Ужин</h4>
+                    <input type="text" class="input-email" value="" placeholder="Введите блюдо">
+                </div>
+            </div>
+
+            <div class="column Sb">
+                <div class="content">
+                    <h3>Суббота</h3>
+                    <h4>Завтрак</h4>
+                    <input type="text" class="input-email" value="" placeholder="Введите блюдо">
+                    <h4>Обед</h4>
+                    <input type="text" class="input-email" value="" placeholder="Введите блюдо">
+                    <h4>Ужин</h4>
+                    <input type="text" class="input-email" value="" placeholder="Введите блюдо">
+                </div>
+            </div>
+
+            <div class="column Nd">
+                <div class="content">
+                    <h3>Воскресенье</h3>
+                    <h4>Завтрак</h4>
+                    <input type="text" class="input-email" value="" placeholder="Введите блюдо">
+                    <h4>Обед</h4>
+                    <input type="text" class="input-email" value="" placeholder="Введите блюдо">
+                    <h4>Ужин</h4>
+                    <input type="text" class="input-email" value="" placeholder="Введите блюдо">
+                </div>
             </div>
         </div>
+
+
+    </div>
+
         <div class="head-logo">
-            <label class="btn-label">Перейти к меню на Вторник</label>
+            <label class="btn-label">Сохранять после заполнения </p> всех дней</label>
             <div>
-                <a href="head-menu.html"><input type="submit" value="Далее" class="input-submit" ></a>
+                <a href="head-menu.html"><input type="submit" value="Сохранить" class="input-submit" ></a>
             </div>
         </div>
         <div class='modal' id='modal1'>
@@ -91,7 +144,7 @@
             </div>
         </div>
 
-        <script src="js/rutina_new.js"></script>
+        <script src="js/menu_week.js"></script>
         <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
         <script  src="js/modal.js"></script>
 </div>

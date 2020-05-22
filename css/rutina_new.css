@@ -1,37 +1,46 @@
 
-@media screen and (max-width: 812px ){
+@media (max-height: 1366px) {
     body{
         background-color: #8B53A6;
+    }
 
+    @font-face {
+        font-family: 'Montserrat' ;
+        src: url("../fonts/Montserrat-Light.ttf");
     }
 
 
     input{
         text-align: center;
-        font-family: 'Play', sans-serif;
+        font-family: 'Montserrat' ;
+        letter-spacing: 1px;
     }
 
     h1{
         font-size:16px;
         text-align:center;
-        font-family: 'Russo One', cursive;
+        font-family: 'Montserrat' ;
         color:#e3e3e3;
         margin-top: 22%;
+        letter-spacing: 1px;
     }
 
     h2{
         font-size:16px;
         text-align:center;
-        font-family: 'Russo One', cursive;
+        font-family: 'Montserrat' ;
         color:#e3e3e3;
         margin-left: 8%;
         margin-top: -3%;
+        letter-spacing: 1px;
     }
 
     p{
         font-size:13px;
         text-align:left;
         color:#e3e3e3;
+        font-family: 'Montserrat' ;
+        letter-spacing: 1px;
     }
 
 
@@ -79,6 +88,10 @@
 
     }
 
+    .disp-none{
+        display: none;
+    }
+
     .menu{
         border-radius: 15px;
         border:1px solid #e3e3e3;
@@ -98,8 +111,8 @@
 
     .sing-up{
         font-size:100%;
-        text-align: center;
-        font-family: 'Pacifico', cursive;
+        text-align: left;
+        font-family: 'Montserrat' ;
         letter-spacing: 1px;
         line-height: 1;
         color:#e3e3e3;
@@ -110,29 +123,6 @@
         line-height: 1.2;
     }
 
-    .padd{
-        margin-top: -11px;
-        font-size:12px;
-        text-align: center;
-        font-family:'Bahnschrift';
-        letter-spacing: 1px;
-        line-height: 1;
-        color:#e3e3e3;
-    }
-
-
-    .input-email{
-        width: 250px;
-        height: 35px;
-        border-radius: 7px;
-        border:none;
-        box-shadow: 0 7px 7px rgba(0,0,0,0.4);
-    }
-
-    .block-arrow:active{
-        border-radius: 15px;
-        background-color: green;
-    }
 
     .collapsible {
         background-color:#8B53A6;
@@ -174,22 +164,7 @@
     }
 
     /* Style the buttons */
-    .btn {
-        border: 1px solid #e3e3e3;
-        outline: none;
-        padding: 12px 16px;
-        background-color: #8B53A6;
-        cursor: pointer;
-        font-family: 'Play', sans-serif;
-        color:#e3e3e3;
-        font-size: 15px;
-        width: 49%;
-        border-radius:10px;
-    }
 
-    .menu-box{
-        margin-top: 3%;
-    }
 
 
     /*Добавление рутин*/
@@ -220,13 +195,15 @@
         padding: 30px 0 10px;
         margin: 0;
         text-transform: uppercase;
+        font-family: 'Montserrat' ;
+        letter-spacing: 1px;
     }
     input[type="text"] {
         margin: 0;
         font-size: 18px;
         line-height: 18px;
         height: 18px;
-        padding: 10px;
+        padding: 5%;
         border: none;
         background: #8B53A6;
         border-radius: 20px;
@@ -250,10 +227,12 @@
     }
     input#new-task {
         float: left;
-        width: 70%;
+        width: 75%;
         height: 6vh;
         background:#e3e3e3;
         color:#8B53A6;
+        font-family: 'Montserrat' ;
+        text-align: left;
     }
     p > button:hover {
         color: #0FC57C;
@@ -266,15 +245,15 @@
         border-bottom: 1px solid #eee;
     }
     li > input[type="checkbox"] {
-        margin: 0 10px;
+        margin: 3% 2%;
         position: relative;
-        top: 15px;
+        top: 4%;
     }
     li > label {
         font-size: 18px;
         line-height: 40px;
         width: 237px;
-        padding: 0 0 0 11px;
+        padding: 0 0 0 5%;
     }
     li >  input[type="text"] {
         width: 60%  ;
@@ -292,19 +271,22 @@
     /* Edit Task */
     ul li input[type=text] {
         display:none;
+        font-family: 'Montserrat' ;
     }
 
     ul li.editMode input[type=text] {
         display:block;
+        font-family: 'Montserrat' ;
     }
 
     ul li.editMode label {
         display:none;
+        font-family: 'Montserrat' ;
     }
 
     .input-submit{
         width: 9vh;
-        height:5.5vh ;
+        height:6.5vh ;
         border:none;
         background-color:#e3e3e3;
         color:#8B53A6;
@@ -312,7 +294,9 @@
         font-size: 100%;
         box-shadow: 0 0 10px rgba(0,0,0,0.5);
         margin-left: 2%;
-        margin-top: 0.1%;
+        border-bottom: 4px solid #9e7676;
+        letter-spacing: 1px;
+        font-family: 'Montserrat';
     }
 
     .input-edit{
@@ -324,10 +308,9 @@
     }
 
     .btn-ed-del{
-        width: 10vh;
-        height:3vh ;
+        width: 12vh;
+        height:5vh ;
         font-size: 90%;
-        margin-top: 3%;
     }
 
 }
@@ -365,6 +348,13 @@
         font-size: 120%;
         margin-top: 3%;
         height: 30%;
+    }
+
+    .image-men{
+        width: 45%;
+        height: 50%;
+        margin-left: 30%;
+        margin-top: 33%;
     }
 
 

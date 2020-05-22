@@ -17,12 +17,7 @@ let createNewTaskElement=function(taskString){
     //label
     let label=document.createElement("label");//label
 
-    //input (text)
-    let editInput=document.createElement("input");//text
-    
-    //button.edit
-    let editButton=document.createElement("input");//edit button
-    
+
     //button.delete
     let deleteButton=document.createElement("input");//delete button
     
@@ -30,19 +25,14 @@ let createNewTaskElement=function(taskString){
 
     //Each elements, needs appending
     checkBox.type="checkbox";
-    editInput.type="text";
-    editInput.className = "input-edit";
 
-    editButton.innerText="";//innerText encodes special characters, HTML does not.
-    editButton.className="edit input-submit btn-ed-del";
     deleteButton.innerText="";
     deleteButton.className="delete input-submit btn-ed-del";
+    label.className = "sing-up";
 
     //and appending.
     listItem.appendChild(checkBox);
     listItem.appendChild(label);
-    listItem.appendChild(editInput);
-    listItem.appendChild(editButton);
     listItem.appendChild(deleteButton);
     return listItem;
 }
@@ -107,6 +97,7 @@ var taskIncomplete=function(){
     //Append the task list item to the #incomplete-tasks.
     var listItem=this.parentNode;
     incompleteTaskHolder.appendChild(listItem);
+    incompleteTaskHolder.appendChild(listRoutine);
     bindTaskEvents(listItem,taskCompleted);
 }
 
@@ -123,12 +114,10 @@ var bindTaskEvents=function(taskListItem,checkBoxEventHandler){
     console.log("bind list item events");
 //select ListItems children
     var checkBox=taskListItem.querySelector("input[type=checkbox]");
-    var editButton=taskListItem.querySelector("input.edit");
     var deleteButton=taskListItem.querySelector("input.delete");
 
 
     //Bind editTask to edit button.
-    editButton.onclick=editTask;
     //Bind deleteTask to delete button.
     deleteButton.onclick=deleteTask;
     //Bind taskCompleted to checkBoxEventHandler.
@@ -190,13 +179,22 @@ axios.post(url, {query: timeRoutineQuery})
         let listRoutines = document.getElementById('incomplete-tasks');
         let rutinesArr = pageRutine.rutines;
         for(let r of rutinesArr) {
-          let li = document.createElement("li");
-          li.textContent = r.bodyRutine;
-          listRoutines.append(li);
+            let li = document.createElement("li");
+            li.textContent = r.bodyRutine;
+            listRoutines.appendChild(li);
+
+          let checkBox=document.createElement("input");
+          checkBox.type="checkbox";
+          listRoutines.appendChild(checkBox);
+
+            let deleteButton=document.createElement("button");
+            deleteButton.className="delete input-submit btn-ed-del";
+            listRoutines.appendChild(deleteButton);
+
 
         }
     })
-; 
+;
 
 addButton.onclick = function newElement() {
 
