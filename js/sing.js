@@ -53,9 +53,9 @@ let singInBut = document.getElementById("singInBut");
 let singUpBut = document.getElementById("singUpBut");
 
 singUpBut.onclick = function registration() {
-  let nameUs = document.getElementById("nameUs").value;
+  let nameUs = document.getElementById("nameUs").textContent;
   //let logiUs = document.getElementById("email").value;
-  let passUs = MD5(document.getElementById("passwordUs").value);
+  let passUs = MD5(document.getElementById("passwordUs").textContent);
 
   let newUser = `mutation creatUser{
     createUsers(
