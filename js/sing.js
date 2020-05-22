@@ -51,11 +51,15 @@ const url = "https://api-euwest.graphcms.com/v1/ck3ohp7e3nq9e01ff33nm3ipb/master
 
 let singInBut = document.getElementById("singInBut");
 let singUpBut = document.getElementById("singUpBut");
+console.log(document.getElementById("name").value);
+
 
 singUpBut.onclick = function registration() {
   let nameUs = document.getElementById("name").value;
   //let logiUs = document.getElementById("email").value;
   let passUs = MD5(document.getElementById("password").value);
+
+  console.log(document.getElementById("name").value);
   let newUser = `mutation creatUser{
     createUsers(
       data:{
@@ -65,7 +69,8 @@ singUpBut.onclick = function registration() {
       }){
       id
     }
-  }`;//login:"${logiUs}"
+  }`;
+  //login:"${logiUs}"
   axios.post(url, {query: newUser})
     .then(response => {
       console.log(response.data);
