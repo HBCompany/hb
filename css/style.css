@@ -7,12 +7,18 @@
 		width: 95%;
 	}
 
+	@font-face {
+            font-family: 'Montserrat' ;
+            src: url("../fonts/Montserrat-Light.ttf");
+        }
 
 	input{
 		text-align: center;
-		font-family: 'Kanit', sans-serif;
+		font-family: 'Montserrat' ;
 		color: #8B53A6;
 		margin-top: 40%;
+		font-size:16px;
+		letter-spacing:1px;
 	}
 
 	h1{
@@ -20,6 +26,7 @@
 		text-align:center;
 		font-family: 'Permanent Marker', cursive;
 		color:#e3e3e3;
+		text-shadow:0 7px 7px rgba(0, 0, 0, 0.4);
 	}
 
 	a{
@@ -30,7 +37,7 @@
 	.copyright{
 	    margin-top:37%;
 	    text-align:center;
-	        font-family: 'Kanit', sans-serif;
+	    font-family: 'Montserrat' ;
         color: #e3e3e3;
 	}
 
@@ -38,7 +45,6 @@
         width: 20%;
         height:30%;
         margin-top: 25%;
-
     }
 
 
@@ -95,7 +101,8 @@
 		height: 60px;
 		border-radius: 30px;
 		border:none;
-		box-shadow: 0 7px 7px rgba(0,0,0,0.4);
+		box-shadow: 0 0 7px rgba(0,0,0,0.4);
+		border-bottom: 4px solid #9e7676;
 	}
 
 	.vl {

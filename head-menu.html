@@ -21,12 +21,31 @@
 					<a href="setting.html"><img src="img/setting.png" class="image-men" alt="Настройки"></a>
 				</div>
 			</div>
-			<div class="head-logo">
-				<ul id="slides">
-					<li class="slide showing">Slide 1</li>
-					<li class="slide"></li>
-					<li class="slide">Slide 3</li>
-				</ul>
+			<div class="head">
+
+				<div class=" content-slider">
+					<h3>Привет, Катерина</h3>
+					<p>6 задач на сегодня</p>
+					<div class=" grid slider">
+						<div class="block-logo">
+							<div class="smile">
+								<img src="img/smile.png" class="img-smile" alt="Smile">
+							</div>
+							<div class="">
+								<p class="text-content">Кухня. Зона 2</p>
+								<p class="text-content">Сделать сейчас</p>
+
+							</div>
+							<div class="smile small-smile">
+								<a href="pred_zone.html"><img src="img/slider-arrow.png" class="img-slider" alt="Arrow"></a>
+							</div>
+						</div>
+						<div>
+							<a href="pred_zone.html"><input type="button" class="input-submit" value="Перейти"></a>
+						</div>
+					</div>
+				</div>
+
 			</div>
 			<div class="menu-box">
 				<div id="myBtnContainer">
@@ -85,40 +104,6 @@
 			</div>
 		</div>
 	</div>
-	<script>
-
-		var slides = document.querySelectorAll('#slides .slide');
-		var currentSlide = 0;
-		var slideInterval = setInterval(nextSlide,5000);
-
-
-		var next = document.getElementById('next');
-		var previous = document.getElementById('previous');
-
-		next.onclick = function() {
-			pauseSlideshow();
-			nextSlide();
-		};
-		previous.onclick = function() {
-			pauseSlideshow();
-			previousSlide();
-		};
-
-		function nextSlide() {
-			goToSlide(currentSlide+1);
-		}
-
-		function previousSlide() {
-			goToSlide(currentSlide-1);
-		}
-
-		function goToSlide(n) {
-			slides[currentSlide].className = 'slide';
-			currentSlide = (n+slides.length)%slides.length;
-			slides[currentSlide].className = 'slide showing';
-		}
-
-	</script>
 	<script src="js/head-menu.js"></script>
     </body>
 </html>
