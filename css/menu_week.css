@@ -1,52 +1,65 @@
 
-@media screen and (max-width: 812px ){
+@media (max-height: 1366px) {
     body{
         background-color: #8B53A6;
 
     }
 
+    @font-face {
+        font-family: 'Montserrat' ;
+        src: url("../fonts/Montserrat-Light.ttf");
+    }
+
 
     input{
-        text-align: center;
-        font-family: 'Play', sans-serif;
+        text-align: left;
+        font-family: 'Montserrat' ;
+        letter-spacing: 1px;
+        padding: 3%;
     }
 
     h1{
         font-size:32px;
         text-align:center;
-        font-family: 'Permanent Marker', cursive;
+        font-family: 'Montserrat' ;
         color:#e3e3e3;
+        letter-spacing: 1px;
     }
 
     h2{
         font-size:16px;
         text-align:center;
-        font-family: 'Russo One', cursive;
+        font-family: 'Montserrat' ;
         color:#e3e3e3;
         margin-top:22%;
+        letter-spacing: 1px;
     }
 
     h3{
         font-size:16px;
         text-align:left;
-        font-family: 'Russo One', cursive;
+        font-family: 'Montserrat' ;
         color:#e3e3e3;
-        margin-top: -3%;
+        margin-top: -10%;
+        letter-spacing: 1px;
     }
 
     h4{
         font-size:16px;
         text-align:left;
-        font-family: 'Russo One', cursive;
+        font-family: 'Montserrat' ;
         color:#e3e3e3;
-        margin-top: -0.2%;
+        margin-top: 0;
         margin-bottom: 2%;
+        letter-spacing: 1px;
+        padding: 2%;
     }
 
     p{
         font-size:13px;
-        text-align:left;
+        text-align:center;
         color:#e3e3e3;
+        letter-spacing: 1px;
     }
 
 
@@ -55,23 +68,12 @@
         color:#e3e3e3;
     }
 
-    select{
-        width:70%;
-        height: 5vh;
-        background:#e3e3e3;
-        color:#8B53A6;
-        margin:2%;
-    }
-
-    option{
-
-    }
-
     label{
         font-size:16px;
-        text-align:left;
-        font-family: 'Russo One', cursive;
+        text-align:center;
+        font-family: 'Montserrat' ;
         color:#e3e3e3;
+        letter-spacing: 1px;
     }
 
     .btn-label{
@@ -116,54 +118,18 @@
 
     }
 
-    .menu{
-        border-radius: 15px;
-        border:1px solid #e3e3e3;
-        box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
-    }
-
-    .menu:active{
-        border-radius: 15px;
-        background-color: green;
-        box-shadow: none;
-    }
 
 
-    .opac{
-        opacity: 0.6;
-    }
-
-    .sing-up{
-        font-size:100%;
-        text-align: center;
-        font-family: 'Pacifico', cursive;
-        letter-spacing: 1px;
-        line-height: 1;
-        color:#e3e3e3;
-    }
-
-    .marg-sing{
-        margin-top: -3px;
-        line-height: 1.2;
-    }
-
-    .padd{
-        margin-top: -11px;
-        font-size:12px;
-        text-align: center;
-        font-family:'Bahnschrift';
-        letter-spacing: 1px;
-        line-height: 1;
-        color:#e3e3e3;
-    }
 
 
     .input-email{
-        width: 250px;
-        height: 35px;
+        width: 90%;
+        height: 7vh;
         border-radius: 7px;
         border:none;
         box-shadow: 0 7px 7px rgba(0,0,0,0.4);
+        background: #e3e3e3 ;
+        font-family: 'Montserrat' ;
     }
 
     .block-arrow:active{
@@ -173,7 +139,7 @@
 
     .collapsible {
         background-color:#8B53A6;
-        font-family: 'Play', sans-serif;
+        font-family: 'Montserrat' ;
         color: #e3e3e3;
         cursor: pointer;
         padding: 15px;
@@ -187,13 +153,7 @@
         margin-top: 3px;
     }
 
-    .content {
-        padding: 0 18px;
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.2s ease-out;
-        background-color:#e3e3e3;
-    }
+
 
 
 
@@ -212,42 +172,37 @@
 
     /* Style the buttons */
     .btn {
-        border: 1px solid #e3e3e3;
         outline: none;
-        padding: 12px 16px;
         background-color: #8B53A6;
         cursor: pointer;
-        font-family: 'Play', sans-serif;
+        font-family: 'Montserrat' ;
         color:#e3e3e3;
         font-size: 15px;
-        width: 49%;
-        border-radius:10px;
+        width:10vh;
+        height: 10vh;
+        border: none;
+        border-bottom: 4px solid #712a5e;
+        box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
     }
+
+    .btn.active {
+        background-color: #e3e3e3;
+        color:  #8B53A6;
+        box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+        border-bottom: 4px solid #9e7676;
+    }
+
+    .btn-center{
+        margin-left: 19.7%;
+        margin-top: 1%;
+    }
+
 
     .menu-box{
         margin-top: 3%;
     }
 
 
-    /*Добавление рутин*/
-    .container {
-        display: block;
-        width: 100%;
-        margin-top: -10%;
-    }
-    ul {
-        margin: 0;
-        padding: 0;
-    }
-    li * {
-        float: left;
-    }
-
-    input, button {
-        outline: none;
-    }
-
-    /* Heading */
     h3,
     label[for='new-task'] {
         color:#e3e3e3;
@@ -258,83 +213,10 @@
         margin: 0;
         text-transform: uppercase;
     }
-    input[type="text"] {
-        margin: 0;
-        font-size: 18px;
-        line-height: 18px;
-        height: 18px;
-        padding: 10px;
-        border: none;
-        background: #8B53A6;
-        border-radius: 20px;
-        font-family: Lato, sans-serif;
-        color: #e3e3e3;
-    }
-    input[type="text"]:focus {
-        color:black ;
-    }
 
-
-
-    /* New Task */
-    label[for='new-task'] {
-        display: block;
-        margin: 0 0 10px;
-    }
-    input#new-task {
-        float: left;
-        width: 70%;
-        background:#e3e3e3;
-        color:#8B53A6;
-    }
-    p > button:hover {
-        color: #0FC57C;
-    }
-
-    /* Task list */
-    li {
-        overflow: hidden;
-        padding: 2% 0;
-        border-bottom: 1px solid #eee;
-    }
-    li > input[type="checkbox"] {
-        margin: 0 10px;
-        position: relative;
-        top: 15px;
-    }
-    li > label {
-        font-size: 18px;
-        line-height: 40px;
-        width: 237px;
-        padding: 0 0 0 11px;
-    }
-    li >  input[type="text"] {
-        width: 60%  ;
-    }
-    li > .delete:hover {
-        color: #CF2323;
-    }
-
-    /* Completed */
-    #completed-tasks label {
-        text-decoration: line-through;
-        color: #e3e3e3;
-    }
-
-    /* Edit Task */
-    ul li input[type=text] {
-        display:none;
-    }
-
-    ul li.editMode input[type=text] {
-        display:block;
-    }
-
-    ul li.editMode label {
-        display:none;
-    }
 
     .input-submit{
+        display: block;
         width: 30vh;
         height:7vh ;
         border:none;
@@ -343,7 +225,10 @@
         border-radius: 30px;
         font-size: 100%;
         box-shadow: 0 0 10px rgba(0,0,0,0.5);
+        border-bottom: 4px solid #9e7676;
         margin-top:7%;
+        text-align: center;
+
     }
 
     .input-edit{
@@ -397,6 +282,41 @@
     .check-box{
         margin:3%;
     }
+
+
+
+    .row {
+        margin: -10% -6%;
+    }
+
+    /* Add padding BETWEEN each column */
+    .row,
+    .row > .column {
+        padding: 8px;
+    }
+
+    /* Create three equal columns that floats next to each other */
+    .column {
+
+        display: none; /* Hide all elements by default */
+    }
+
+    /* Clear floats after rows */
+    .row:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    /* Content */
+    .content {
+        padding: 10px;
+    }
+
+    /* The "show" class is added to the filtered elements */
+    .show {
+        display: block;
+    }
 }
 
 
@@ -413,8 +333,7 @@
     }
 
     .input-email{
-        width: 40vh;
-        height: 6vh;
+
     }
 
 
