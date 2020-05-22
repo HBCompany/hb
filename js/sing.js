@@ -53,9 +53,10 @@ let singInBut = document.getElementById("singInBut");
 let singUpBut = document.getElementById("singUpBut");
 
 singUpBut.onclick = function registration() {
-  let nameUs = document.getElementById("name").value;
+  let nameUs = document.getElementById("nameUs").textContent;
   //let logiUs = document.getElementById("email").value;
-  let passUs = MD5(document.getElementById("password").value);
+  let passUs = MD5(document.getElementById("passwordUs").textContent);
+
   let newUser = `mutation creatUser{
     createUsers(
       data:{
@@ -65,7 +66,8 @@ singUpBut.onclick = function registration() {
       }){
       id
     }
-  }`;//login:"${logiUs}"
+  }`;
+  //login:"${logiUs}"
   axios.post(url, {query: newUser})
     .then(response => {
       console.log(response.data);
@@ -75,7 +77,7 @@ singUpBut.onclick = function registration() {
       } 
     });
 
-  document.location.href = "https://hbcompany.github.io/hb.github.io/question.html";
+  //document.location.href = "https://hbcompany.github.io/hb.github.io/question.html";
 }
 
 singInBut.onclick =  function entry() {
