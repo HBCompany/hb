@@ -53,9 +53,9 @@ let singInBut = document.getElementById("singInBut");
 let singUpBut = document.getElementById("singUpBut");
 
 singUpBut.onclick = function registration() {
-  let nameUs = document.getElementById("nameUs").textContent;
+  let nameUs = document.getElementById("nameUs").value;
   //let logiUs = document.getElementById("email").value;
-  let passUs = MD5(document.getElementById("passwordUs").textContent);
+  let passUs = MD5(document.getElementById("passwordUs").value);
 
   let newUser = `mutation creatUser{
     createUsers(
@@ -67,6 +67,9 @@ singUpBut.onclick = function registration() {
       id
     }
   }`;
+
+  console.log(newUser);
+
   //login:"${logiUs}"
   axios.post(url, {query: newUser})
     .then(response => {
@@ -76,11 +79,9 @@ singUpBut.onclick = function registration() {
             alert("Изменение данных произведено успешно!");
       } 
     });
-
-  //document.location.href = "https://hbcompany.github.io/hb.github.io/question.html";
 }
 
-singInBut.onclick =  function entry() {
+/*singInBut.onclick =  function entry() {
   let logiUs = document.getElementById("email_").value;
   let passUs = MD5(document.getElementById("password_").value);
   console.log(logiUs);
@@ -103,7 +104,7 @@ singInBut.onclick =  function entry() {
         }else  alert("Noo");
     })
   ; 
-}
+}*/
 
 
 
