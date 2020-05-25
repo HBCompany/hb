@@ -10,6 +10,7 @@ var completedTasksHolder=document.getElementById("completed-tasks");//completed-
 let createNewTaskElement=function(taskString){
 
     let listItem=document.createElement("li");
+    //listItem.className = "editMode";
 
     //input (checkbox)
     let checkBox=document.createElement("input");//checkbx
@@ -22,8 +23,10 @@ let createNewTaskElement=function(taskString){
 
     label.innerText=taskString;
 
+    //Each elements, needs appending
     checkBox.type="checkbox";
 
+    deleteButton.innerText="";
     deleteButton.className="delete input-submit btn-ed-del";
     label.className = "sing-up";
 
@@ -33,6 +36,35 @@ let createNewTaskElement=function(taskString){
     listItem.appendChild(deleteButton);
     return listItem;
 }
+
+//Edit an existing task.
+
+let editTask=function(){
+    console.log("Edit Task...");
+    console.log("Change 'edit' to 'save'");
+
+
+    let listItem=this.parentNode;
+
+    let editInput=listItem.querySelector('input[type=text]');
+    let label=listItem.querySelector("label");
+    let containsClass=listItem.classList.contains("editMode");
+    //If class of the parent is .editmode
+    if(containsClass){
+
+        //switch to .editmode
+        //label becomes the inputs value.
+        label.innerText=editInput.value;
+    }else{
+        editInput.value=label.innerText;
+    }
+
+    //toggle .editmode on the parent.
+    listItem.classList.toggle("editMode");
+}
+
+
+
 
 //Delete task.
 var deleteTask=function(){
@@ -44,6 +76,7 @@ var deleteTask=function(){
     ul.removeChild(listItem);
 
 }
+
 
 //Mark task completed
 var taskCompleted=function(){
@@ -59,7 +92,9 @@ var taskCompleted=function(){
 
 var taskIncomplete=function(){
     console.log("Incomplete Task...");
-
+//Mark task as incomplete.
+    //When the checkbox is unchecked
+    //Append the task list item to the #incomplete-tasks.
     var listItem=this.parentNode;
     incompleteTaskHolder.appendChild(listItem);
     bindTaskEvents(listItem,taskCompleted);
@@ -71,6 +106,7 @@ var ajaxRequest=function(){
     console.log("AJAX Request");
 }
 
+//The glue to hold it all together.
 
 
 var bindTaskEvents=function(taskListItem,checkBoxEventHandler){
@@ -145,13 +181,12 @@ axios.post(url, {query: timeRoutineQuery})
             let li = document.createElement("li");
             li.textContent = r.bodyRutine;
             listRoutines.appendChild(li);
-            li.className = "sing-up";
 
           let checkBox=document.createElement("input");
           checkBox.type="checkbox";
           listRoutines.appendChild(checkBox);
 
-            let deleteButton=document.createElement("input");
+            let deleteButton=document.createElement("button");
             deleteButton.className="delete input-submit btn-ed-del";
             listRoutines.appendChild(deleteButton);
 

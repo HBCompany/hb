@@ -83,7 +83,7 @@
 
 
     .image-men{
-        width: 48%;
+        width: 50%;
         height:50%;
         margin-top: 28%;
         margin-left: 28%;
@@ -178,8 +178,8 @@
         font-family: 'Montserrat' ;
         color:#e3e3e3;
         font-size: 15px;
-        width:10vh;
-        height: 10vh;
+        width:12vh;
+        height: 12vh;
         border: none;
         border-bottom: 4px solid #712a5e;
         box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
@@ -193,8 +193,11 @@
     }
 
     .btn-center{
-        margin-left: 19.7%;
-        margin-top: 1%;
+        width: 16.2vh;
+    }
+
+    #myBtnContainer{
+        margin-left: 3%;
     }
 
 

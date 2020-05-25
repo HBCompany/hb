@@ -31,7 +31,7 @@
         text-align:left;
         font-family: 'Russo One', cursive;
         color:#8B53A6;
-        margin-left: 3%;
+        margin-left:3%;
         letter-spacing: 1px;
     }
 
@@ -48,7 +48,7 @@
         text-align:left;
         color:#8B53A6;
         font-family: 'Montserrat' ;
-        letter-spacing: 1vh;
+        letter-spacing: 1px;
         margin-left: 3%;
     }
 
@@ -88,6 +88,12 @@
         flex-direction: column;
         align-items: center;
         margin-top: -7%;
+    }
+
+    .head{
+        display:flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     .block-logo{
@@ -140,14 +146,6 @@
         box-shadow: 0 7px 7px rgba(0,0,0,0.4);
     }
 
-
-    .content {
-        padding: 0 18px;
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.2s ease-out;
-        color:#e3e3e3;
-    }
 
 
 
@@ -308,7 +306,7 @@
         border-radius: 10px;
         font-size: 16px;
         margin-left: 2.3%;
-        margin-top:7%;
+        margin-top:13%;
         border-bottom: 4px solid #712a5e;
         letter-spacing: 1px;
         font-family: 'Montserrat';
@@ -378,7 +376,7 @@
     }
 
     .input-submit{
-        margin-top: 13%;
+        margin-top: 22%;
         margin-left: 2.6%;
     }
 
@@ -394,7 +392,7 @@
 
 @media (max-height: 800px) and (min-height: 668px){
     .input-submit{
-        margin-top: 17%;
+        margin-top: 26%;
         margin-left: 2.7%;
     }
 }
