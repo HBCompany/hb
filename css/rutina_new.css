@@ -4,11 +4,6 @@
         background-color: #8B53A6;
     }
 
-    @font-face {
-        font-family: 'Montserrat' ;
-        src: url("../fonts/Montserrat-Light.ttf");
-    }
-
 
     input{
         text-align: center;
@@ -29,16 +24,14 @@
         font-size:16px;
         text-align:center;
         font-family: 'Montserrat' ;
-        color:#e3e3e3;
-        margin-left: 8%;
-        margin-top: -3%;
+        color:#8B53A6;
         letter-spacing: 1px;
     }
 
     p{
-        font-size:13px;
+        font-size:14px;
         text-align:left;
-        color:#e3e3e3;
+        color:#8B53A6;
         font-family: 'Montserrat' ;
         letter-spacing: 1px;
     }
@@ -143,7 +136,6 @@
     .content {
         padding: 0 18px;
         max-height: 0;
-        overflow: hidden;
         transition: max-height 0.2s ease-out;
         color:#e3e3e3;
     }
@@ -323,6 +315,10 @@
         font-size: 120%;
     }
 
+    p{
+        font-size: 100%;
+    }
+
     .btn {
         font-size: 110%;
         padding:16px 19px;
@@ -354,7 +350,7 @@
         width: 45%;
         height: 50%;
         margin-left: 30%;
-        margin-top: 33%;
+        margin-top: 30%;
     }
 
 

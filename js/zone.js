@@ -1,38 +1,30 @@
-function getTimeRemaining(endtime) {
-  var t = Date.parse(endtime) - Date.parse(new Date());
-  var seconds = Math.floor((t / 1000) % 60);
-  var minutes = Math.floor((t / 1000 / 60) % 60);
-  var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
-  var days = Math.floor(t / (1000 * 60 * 60 * 24));
-  return {
-    'total': t,
-    'days': days,
-    'hours': hours,
-    'minutes': minutes,
-    'seconds': seconds
-  };
-}
+function timer(){
 
-function initializeClock(id, endtime) {
-  var clock = document.getElementById(id);
-  var minutesSpan = clock.querySelector('.minutes');
-  var secondsSpan = clock.querySelector('.seconds');
+  var hour = document.getElementById('hour').innerHTML;
+  var minute = document.getElementById('minute').innerHTML;
+  var second = document.getElementById('second').innerHTML;
+  var end = false;
 
-  function updateClock() {
-    var t = getTimeRemaining(endtime);
+  if( second > 0 ) second--;
+  else{
+    second = 59;
 
-    minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
-    secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
+    if( minute > 0 ) minute--;
+    else{
+      second = 59;
 
-    if (t.total <= 0) {
-      clearInterval(timeinterval);
+      if( hour > 0 ) hour--;
+      else end = true;
     }
   }
 
-  updateClock();
-  var timeinterval = setInterval(updateClock, 1000);
+  if(end){
+    clearInterval(intervalID);
+    alert("Таймер сработал!");
+  }else{
+    document.getElementById('hour').innerHTML = hour;
+    document.getElementById('minute').innerHTML = minute;
+    document.getElementById('second').innerHTML = second;
+  }
 }
-
-var deadline=new Date(Date.parse(new Date()) + 35 * 1000);
-var deadline = new Date(Date.parse(new Date()) + 15 * 24 * 60 * 60 * 1000); // for endless timer
-initializeClock('countdown', deadline);
+window.intervalID = setInterval(timer, 1000);

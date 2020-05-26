@@ -1,26 +1,26 @@
-const staticCacheName = 'site-static';
-const assets = [
-    '/',
-    '/index.html',
-    '/js/app.js',
-    '/css/style.css',
-    '/img/setting.png'
+const statisAssets = [
+    './',
+    '/style.css',
+    './app.js',
 ];
-self.addEventListener('install', evt => {
-    //console.log('service worker has been installed');
-    evt.waitUntil(
-        caches.open(staticCacheName).then(cache=>{
-            console.log('caching shell assets');
-            cache.addAll(assets);
-        })
-    );
-});
- 
-self.addEventListener('activate', evt => {
-    //console.log('service worker has been activated');
+
+self.addEventListener('install', event =>{
+    const cache = await caches.open('news-static');
+    cache.addAll(statisAssets);
 });
 
-//fetch event
-self.addEventListener('fetch', evt => {
-    //console.log('fetch event',evt);
+self.addEventListener('fetch', event =>{
+    const req = event.request;
+    const url = new URL(req.url);
+
+    if(url.origin === location.origin) {
+        event.respondWith(cacheFirst(req));
+    } else {
+        event.respondWith(networkFirst(req));
+    }
 });
+
+async function cacheFirst(req) {
+    const cachedResponse = await caches.match(req);
+    return cachedResponse || fetch(req);
+}
