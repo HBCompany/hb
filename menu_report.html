@@ -5,22 +5,75 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/menu_report.css">
-    <script type='text/javascript' src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/modal.css">
     <link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Russo+One&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap" rel="stylesheet">
-    <title>Отчет</title>
+    <title>Недельное меню</title>
 </head>
 <body>
 
 <div class="grid main">
-    <div class="block-logo  ">
-        <div><a href="setting.html"><img src="img/setting.png" class="image-men" alt="Настройки"></a></div>
-        <div class="head-logo"><h1>HomeBook</h1></div>
-        <div></div>
+    <div class="block-logo">
+        <div><a href="head-menu.html"><img src="img/double-left.png" class="image-men" alt="Назад"></a></div>
+        <div class="head-logo">
+            <h1>Недельное меню</h1>
+        </div>
+        <div><a href="#" class=' open-modal' data-modal="#modal1"><img src="img/instr.png" class="image-men" alt="Инструкция"></a></div>
+    </div>
+    <div class="zone-block">
+        <h2>Понедельник (25.05.20)</h2>
+        <h3>Завтрак: </h3>
+        <input class="input-text" id="" type="text" value="Омлет">
+        <h3>Обед: </h3>
+        <input class="input-text" id="" type="text" value="Борщ">
+        <h3>Ужин: </h3>
+        <input class="input-text" id="" type="text" value="Чай">
+        <p>
+        </p>
+    </div>
+    <div class="zone-block">
+        <h2>Вторник (26.05.20)</h2>
+        <h3>Завтрак: </h3>
+        <input class="input-text" id="" type="text" value="Омлет">
+        <h3>Обед: </h3>
+        <input class="input-text" id="" type="text" value="Борщ">
+        <h3>Ужин: </h3>
+        <input class="input-text" id="" type="text" value="Чай">
+        <p>
+        </p>
+    </div>
+    <div class="zone-block">
+        <h2>Среда (27.05.20)</h2>
+        <h3>Завтрак: </h3>
+        <input class="input-text" id="" type="text" value="Омлет">
+        <h3>Обед: </h3>
+        <input class="input-text" id="" type="text" value="Борщ">
+        <h3>Ужин: </h3>
+        <input class="input-text" id="" type="text" value="Чай">
+        <p>
+        </p>
     </div>
 
 
+
+    <div class='modal' id='modal1'>
+        <div class='content'>
+            <h2 class='title'>Инструкция</h2>
+            <p>
+                Тут будет инструкция к каждому разделу
+                Тут будет инструкция к каждому разделу
+                Тут будет инструкция к каждому разделу
+            </p>
+            <div class="head-logo">
+                <a class='btn-modal close-modal' data-modal="#modal1" href="#">Понятно</a>
+            </div>
+        </div>
+    </div>
+
+</div>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
+<script  src="js/modal.js"></script>
 </div>
 </body>
 </html>
