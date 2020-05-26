@@ -49,8 +49,9 @@
 */
 const url = "https://api-euwest.graphcms.com/v1/ck3ohp7e3nq9e01ff33nm3ipb/master";
 
-let singInBut = document.getElementById("singInBut");
+//let singInBut = document.getElementById("singInBut");
 let singUpBut = document.getElementById("singUpBut");
+
 
 singUpBut.onclick = function registration() {
   let nameUs = document.getElementById("nameUs").value;
