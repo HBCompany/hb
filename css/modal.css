@@ -90,8 +90,9 @@
   }
 
   .title {
-    padding: 5%;
+    padding-top: 5%;
     text-align: center;
+    color: #8B53A6;
   }
 
   .content {
