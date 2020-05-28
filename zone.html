@@ -9,20 +9,30 @@
 	<link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Russo+One&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap" rel="stylesheet">
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 	<title>Утренняя рутина</title>
 </head>
 <body>
 
 <div class="grid main">
 	<div class="block-logo">
-		<div><a href="pred_zone.html"><img src="img/double-left.png" class="image-men" alt="Назад"></div>
-		<div class="head-logo"><h1>Кухня. Зона 1</h1></div>
-		<div><a href="#" class=' open-modal' data-modal="#modal1"><img src="img/instr.png" class="image-men" alt="Инструкция"></a></div>
+		<div>
+			<a href="pred_zone.html">
+				<img src="img/double-left.png" class="image-men" alt="Назад">
+			</a>
+		</div>
+		<div class="head-logo">
+			<h1 id="nameZone"></h1>
+		</div>
+		<div>
+			<a href="#" class=' open-modal' data-modal="#modal1">
+				<img src="img/instr.png" class="image-men" alt="Инструкция">
+			</a>
+		</div>
 	</div>
 	<div class="cont">
 		<h3>Ваше задание:</h3>
-		<p>Задание Задание Задание Задание Задание Задание Задание Задание Задание Задание Задание Задание Задание Задание Задание Задание
-			е Задание Задание Задание Задание Задание Задание Задание
+		<p id="bodyZone">
 		</p>
 	</div>
 	<div id="timer">
