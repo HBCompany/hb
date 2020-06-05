@@ -179,16 +179,19 @@ axios.post(url, {query: timeRoutineQuery})
         let rutinesArr = pageRutine.rutines;
         for(let r of rutinesArr) {
             let li = document.createElement("li");
-            li.textContent = r.bodyRutine;
-            listRoutines.appendChild(li);
+            li.innerHTML = `<input type = "text" class = "input-edit"  value = "${r.bodyRutine}">`;
+            li.className = "editMode";
 
           let checkBox=document.createElement("input");
           checkBox.type="checkbox";
-          listRoutines.appendChild(checkBox);
+          li.appendChild(checkBox);
 
-            let deleteButton=document.createElement("button");
+            let deleteButton=document.createElement("input");
             deleteButton.className="delete input-submit btn-ed-del";
-            listRoutines.appendChild(deleteButton);
+            deleteButton.value = "Delete";
+            li.appendChild(deleteButton);
+
+            listRoutines.appendChild(li);
 
 
         }

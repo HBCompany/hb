@@ -16,6 +16,7 @@ const roomInfo = `{
     room(where:{id:"${roomName}"}){
     nameRoom
     zones{
+      id
       nameZone
       bodyZone
       smallBodyZone
@@ -30,11 +31,15 @@ axios.post(url, {query: roomInfo})
         console.log(room);
         let nameZone = document.getElementsByClassName("nameZone");
         let smallBodyZone = document.getElementsByClassName("bodyZone");
+        let linkZone = document.getElementsByClassName("link");
+        let nameRoom = document.getElementById("room");
+        nameRoom.textContent = room.nameRoom;
 
         let zonesArr = room.zones;
         for(let i = 0; i < 5; i++){
             nameZone[i].textContent = zonesArr[i].nameZone;
             smallBodyZone[i].textContent = zonesArr[i].smallBodyZone;
+            linkZone[i].href = "zone.html?id=" + zonesArr[i].id;
         }
 
     })
