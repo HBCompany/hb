@@ -49,6 +49,10 @@ const bodyZoneShow = `{
   zone(where:{id:"${zoneName}"}){
     nameZone
     bodyZone
+    rooms{
+     id
+     nameRoom
+    }
   }
 }`;
 
@@ -62,5 +66,8 @@ axios.post(url, {query: bodyZoneShow})
 
         let bodyZone = document.getElementById("bodyZone");
         bodyZone.textContent = zone.bodyZone;
+
+        let predZone = document.getElementById("predZone");
+        predZone.href = "pred_zone.html?id=" + zone.rooms[0].id;
     })
 ;
