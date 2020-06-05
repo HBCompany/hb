@@ -7,10 +7,11 @@
 	<meta name="theme-color" content="#8B53A6">
 	<link rel="apple-touch-icon" href="./img/icons/icon-128x128.png">
 	<meta name="apple-mobile-web-app-status-bar" content="#e3e3e3">
+	<link rel="manifest" href="./manifest.json">
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link href="https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap" rel="stylesheet">
-	<link rel="manifest" href="./manifest.json">
+
     <title>Sing up</title>
 </head>
     <body>
@@ -40,6 +41,21 @@
 	</div>
 	</div>
 		<script src="js/sing.js"></script>
+		<script>
+			(function() {
+				if (!('serviceWorker' in navigator)) {
+					console.log('Service worker not supported');
+					return;
+				}
+				navigator.serviceWorker.register('service-worker.js')
+						.then(function(registration) {
+							console.log('SW successfully registered');
+						})
+						.catch(function(error) {
+							console.log('registration failed', error);
+						});
+			})();
+		</script>
 	</body>
 </html>
 
