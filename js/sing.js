@@ -58,7 +58,7 @@ singUpBut.onclick = function registration() {
   //let logiUs = document.getElementById("email").value;
   let passUs = MD5(document.getElementById("passwordUs").value);
 
-  let newUser = `mutation creatUser{
+  let newUser = `mutation createUser{
     createUsers(
       data:{
         name:"${nameUs}"
@@ -72,7 +72,7 @@ singUpBut.onclick = function registration() {
   console.log(newUser);
 
   //login:"${logiUs}"
-  axios.post(url, {query: newUser})
+  axios.post(url, {mutation: newUser})
     .then(response => {
       console.log(response.data);
       let createUser = response.data.data.id;
