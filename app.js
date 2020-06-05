@@ -11,13 +11,3 @@
             console.log('registration failed', error);
         });
 })();
-
-
-if (Notification.permission == 'granted') {
-    navigator.serviceWorker.getRegistration().then(reg => {
-
-        // TODO 2.4 - Add 'options' object to configure the notification
-
-        reg.showNotification('Hello world!');
-    });
-}
