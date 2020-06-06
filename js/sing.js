@@ -53,10 +53,14 @@ const url = "https://api-euwest.graphcms.com/v1/ck3ohp7e3nq9e01ff33nm3ipb/master
 let singUpBut = document.getElementById("singUpBut");
 
 
-singUpBut.onclick = function registration() {
-  let nameUs = document.getElementById("nameUs").value;
-  //let logiUs = document.getElementById("email").value;
-  let passUs = MD5(document.getElementById("passwordUs").value);
+document.forms[0].onsubmit = function registration(e) {
+    e.preventDefault();
+    let a = 0;
+
+    let nameUs = "";
+    let passUs = "";
+    nameUs = document.getElementById("nameUs").value;
+    passUs = MD5(document.getElementById("passwordUs").value);
 
   let newUser = `mutation createUser{
     createUsers(
@@ -72,7 +76,7 @@ singUpBut.onclick = function registration() {
   console.log(newUser);
 
   //login:"${logiUs}"
-  axios.post(url, {mutation: newUser})
+  axios.post(url, {query: newUser})
     .then(response => {
       console.log(response.data);
       let createUser = response.data.data.id;
@@ -82,7 +86,7 @@ singUpBut.onclick = function registration() {
     });
 }
 
-/*singInBut.onclick =  function entry() {
+singInBut.onclick =  function entry() {
   let logiUs = document.getElementById("email_").value;
   let passUs = MD5(document.getElementById("password_").value);
   console.log(logiUs);
@@ -105,7 +109,7 @@ singUpBut.onclick = function registration() {
         }else  alert("Noo");
     })
   ; 
-}*/
+}
 
 
 

@@ -102,6 +102,14 @@
         margin-top: -5%;
     }
 
+    .singUpBut{
+        /*text-decoration: none;*/
+        color:#e3e3e3;
+        font-size: 16px;
+        text-align: center;
+        margin-top: 10%;
+    }
+
 }
 
 
@@ -138,6 +146,14 @@
 
     .input-marg{
         margin-top: -10%;
+    }
+
+    .singUpBut{
+        /*text-decoration: none;*/
+        color:#e3e3e3;
+        font-size: 16px;
+        text-align: center;
+        margin-top: 10%;
     }
 
 }
