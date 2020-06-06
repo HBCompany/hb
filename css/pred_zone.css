@@ -104,6 +104,28 @@
 
     }
 
+    .instr{
+        color:#8B53A6;
+        border-bottom:1px solid #8B53A6;
+        margin-left: -17%;
+    }
+
+    .btn-marg{
+        display: block;
+        width: 99%;
+        height: 6vh;
+        border: none;
+        background-color: #8B53A6;
+        color: #e3e3e3;
+        border-radius: 10px;
+        font-size: 16px;
+        border-bottom: 4px solid #712a5e;
+        letter-spacing: 1px;
+        font-family: 'Montserrat';
+        padding: 2%;
+        margin-top: 14%;
+    }
+
     .zone-block{
         width: 98%;
         height: 93%;
@@ -173,6 +195,51 @@
         border-bottom: 4px solid #712a5e;
         letter-spacing: 1px;
         font-family: 'Montserrat';
+    }
+
+    li {
+        overflow: hidden;
+        padding: 2% 0;
+        border-bottom: 1px solid #eee;
+    }
+    li > input[type="checkbox"] {
+        margin: 3% 2%;
+        position: relative;
+        top: 4%;
+    }
+    li > label {
+        font-size: 18px;
+        line-height: 40px;
+        width: 237px;
+        padding: 0 0 0 5%;
+    }
+    li >  input[type="text"] {
+        width: 60%  ;
+    }
+    li > .delete:hover {
+        color: #CF2323;
+    }
+
+    /* Completed */
+    #completed-tasks label {
+        text-decoration: line-through;
+        color: #e3e3e3;
+    }
+
+    /* Edit Task */
+    ul li input[type=text] {
+        display:none;
+        font-family: 'Montserrat' ;
+    }
+
+    ul li.editMode input[type=text] {
+        display:block;
+        font-family: 'Montserrat' ;
+    }
+
+    ul li.editMode label {
+        display:none;
+        font-family: 'Montserrat' ;
     }
 
 

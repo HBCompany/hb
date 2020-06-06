@@ -98,8 +98,9 @@
     }
 
 
-    .opac{
-        opacity: 0.6;
+    .instr{
+        color:#8B53A6;
+        border-bottom:1px solid #8B53A6;
     }
 
     .sing-up{
