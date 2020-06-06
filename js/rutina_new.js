@@ -183,8 +183,9 @@ axios.post(url, {query: timeRoutineQuery})
             li.className = "editMode";
 
           let checkBox=document.createElement("input");
-          checkBox.type="checkbox";
           li.appendChild(checkBox);
+          checkBox.type="checkbox";
+
 
             let deleteButton=document.createElement("input");
             deleteButton.className="delete input-submit btn-ed-del";
