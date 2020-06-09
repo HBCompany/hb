@@ -63,50 +63,38 @@ function bit_rol(d, _) {
   return d << _ | d >>> 32 - _
 }
 ///////////////////////////////////////////////
+singInBut.onclick =  function entry() {
+  e.preventDefault();
 
-let singUpBut = document.getElementById("singUpBut");
+  let nameUs = document.getElementById("nameUs").value;
+  let passUs = MD5(document.getElementById("passwordUs").value);
 
+  if (nameUs == "" || passUs == "") {
+    alert("Введите данные!")
+  }else{
+    
 
-document.forms[0].onsubmit = function registration(e) {
-    e.preventDefault();
+    console.log(logiUs);
+    let user = `{ 
+      userses(where:{login: "${logiUs}"}){
+        password
+        name
+      }
+    }`;
 
-    let nameUs = document.getElementById("nameUs").value;
-    let passUs = MD5(document.getElementById("passwordUs").value);
-    if (nameUs == "" || nameUs == "  ") {
-      alert("Введите данные!")
-    }else{
-      
+    axios.post(url, {query: user})
+      .then(response => {
+        console.log(response.data.data.userses);
+          passwordUs = response.data.data.userses[0].password;
+          console.log(passUs);
+          console.log(passwordUs);
 
-      let newUser = `mutation createUser{
-        createUsers(
-          data:{
-            name:"${nameUs}"
-            password:"${passUs}"
-            status: PUBLISHED
-          }){
-          id
-        }
-      }`;
+          if (passwordUs == passUs) {
+              alert("Oki");
+          }else  alert("Noo");
+      })
+    ;
+  }
 
-      console.log(newUser);
-
-      //login:"${logiUs}"
-      axios.post(url, {query: newUser})
-        .then(response => {
-          console.log(response.data);
-          let createUser = response.data.data.id;
-          if (createUser) {
-                alert("Изменение данных произведено успешно!");
-          } 
-        });
-        let singUp = document.getElementById("singUp");
-        singUp.href = "";
-    }   
+   
 }
-
-
-
-
-
-
-
