@@ -63,12 +63,14 @@
 
 		<script>
 			if ('serviceWorker' in navigator) {
-				console.log("Will the service worker register?");
-				navigator.serviceWorker.register('service-worker.js')
-						.then(function(reg){
-							console.log("Yes, it did.");
-						}).catch(function(err) {
-					console.log("No it didn't. This happened: ", err)
+				window.addEventListener('load', () => {
+					navigator.serviceWorker.register('service-worker.js')
+							.then(registration => {
+								console.log('Service Worker is registered', registration);
+							})
+							.catch(err => {
+								console.error('Registration failed:', err);
+							});
 				});
 			}
 
