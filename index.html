@@ -9,7 +9,28 @@
 	<meta name="apple-mobile-web-app-status-bar" content="#e3e3e3">
 	<link rel="manifest" href="./manifest.json">
 	<link rel="stylesheet" href="css/style.css">
+	<script>
+		let defferedPrompt = null;
+		window.addEventListener('beforeinstallprompt',(e)=>{
+			e.preventDefault();
+			deferredPrompt = e;
+		});
 
+		async function install() {
+			if (deferredPrompt){
+				deferredPrompt.prompt();
+				console.log(deferredPrompt);
+				deferredPrompt.userChoice.then(function(choiceResult){
+					if(choiceResult.outcome === 'accepted'){
+						console.log('Your PWA has been installed');
+					}else{
+						console.log('User chose to not install your PWA');
+					}
+					deferredPrompt = null;
+				});
+			}
+		}
+	</script>
     <title>Sign up</title>
 </head>
     <body>
@@ -33,7 +54,7 @@
 					</a>
 				</div>
 			</div>
-				<div class="add-to head-logo"><button class="add-to-btn">Add to home screen</button></div>
+				<div class="add-to head-logo"><button onclick="install()">Install</button></div>
 				<p class="copyright">Created by GREKOR</p>
 		</div>
 	</div>
@@ -51,7 +72,7 @@
 				});
 			}
 
-			let deferredPrompt;
+			/*let deferredPrompt;
 			let div = document.querySelector('.add-to');
 			let button = document.querySelector('.add-to-btn');
 			div.style.display = 'none';
@@ -74,7 +95,7 @@
 							deferredPrompt = null;
 						});
 				});
-			});
+			});*/
 		</script>
 	<script src="app.js"></script>
 	<script src="js/sing.js"></script>
