@@ -59,7 +59,21 @@ self.addEventListener('install', event => {
 });
 
 self.addEventListener('activate', event => {
-    console.log('Service worker activate event!');
+    console.log('Activating new service worker...');
+
+    const cacheWhitelist = [cacheName];
+
+    event.waitUntil(
+        caches.keys().then(cacheName => {
+            return Promise.all(
+                cacheName.map(cacheName => {
+                    if (cacheWhitelist.indexOf(cacheName) === -1) {
+                        return caches.delete(cacheName);
+                    }
+                })
+            );
+        })
+    );
 });
 
 
@@ -77,13 +91,6 @@ self.addEventListener('fetch', event => {
 
                 // TODO 4 - Add fetched files to the cache
 
-                    .then(response => {
-                        // TODO 5 - Respond with custom 404 page
-                        return caches.open(сacheName).then(cache => {
-                            cache.put(event.request.url, response.clone());
-                            return response;
-                        });
-                    });
             }).catch(error => {
 
             // TODO 6 - Respond with custom offline page
