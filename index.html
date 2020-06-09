@@ -33,7 +33,7 @@
 					</a>
 				</div>
 			</div>
-				<div class="head-logo"><button class="add-button">Add to home screen</button></div>
+				<div class="add-to head-logo"><button class="add-to-btn">Add to home screen</button></div>
 				<p class="copyright">Created by GREKOR</p>
 		</div>
 	</div>
@@ -50,6 +50,31 @@
 					console.log("No it didn't. This happened: ", err)
 				});
 			}
+
+			let deferredPromt;
+			let div = document.querySelector('.add-to');
+			let button = document.querySelector('.add-to-btn');
+			div.style.display = 'none';
+
+			window.addEventListener('beforeinstallpromt', (e) => {
+				e.preventDefault();
+				deferredPrompt = e;
+				div.style.display = 'block';
+
+				btnAdd.addEventListener('click',(e) =>{
+					btnAdd.style.display = 'none';
+					deferredPrompt.prompt();
+					deferredPrompt.userChoice
+						.then((choiceResult) =>{
+							if(choiceResult.outcome === 'accepted'){
+							console.log('User accepted the A2HS prompt');
+							}else{
+								console.log('User disimissed the A2HS prompt');
+							}
+							deferredPrompt = null;
+						});
+				});
+			});
 		</script>
 	<script src="app.js"></script>
 	<script src="js/sing.js"></script>
