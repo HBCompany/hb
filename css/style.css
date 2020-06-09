@@ -48,6 +48,11 @@
         background-size:cover;
     }
 
+    .add-button {
+        width:50%;
+        height:7vh;
+    }
+
 
 	.grid{
 		display: grid;
