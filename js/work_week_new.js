@@ -159,7 +159,7 @@ function getQueryVariable(variable)
 }
 
 
-let pageRut = getQueryVariable('id'); 
+let pageRut = getQueryVariable('id');
 const timeRoutineQuery = `{
  pageRutine (where:{id:"${pageRut}"}){
     time
@@ -227,17 +227,17 @@ addButton.onclick = function newElement() {
     bindTaskEvents(listItem, taskCompleted);
 
     if (taskInput === '') {
-      alert("You must write something!");
+        alert("You must write something!");
     } else {
         incompleteTaskHolder.appendChild(listItem);
     }
     taskInput.value = "";
 
     for (i = 0; i < close.length; i++) {
-      close[i].onclick = function() {
-        let div = this.parentElement;
-        div.style.display = "none";
-      }
+        close[i].onclick = function() {
+            let div = this.parentElement;
+            div.style.display = "none";
+        }
     }
 
     let bodyRut = listItem.textContent;
@@ -253,11 +253,11 @@ addButton.onclick = function newElement() {
       }`;
 
     axios.post(url, {query: newRutine})
-      .then(response => {
-          console.log(response.data);
-          let createRutine = response.data.data.id; 
-          if (createRutine) {
-            console.log("Изменение данных произведено успешно!");
-         }
-      });
+        .then(response => {
+            console.log(response.data);
+            let createRutine = response.data.data.id;
+            if (createRutine) {
+                console.log("Изменение данных произведено успешно!");
+            }
+        });
 };
