@@ -10,14 +10,17 @@ var completedTasksHolder=document.getElementById("completed-tasks");//completed-
 let createNewTaskElement=function(taskString){
 
     let listItem=document.createElement("li");
-    //listItem.className = "editMode";
+    listItem.className = "editMode";
 
     //input (checkbox)
     let checkBox=document.createElement("input");//checkbx
     //label
     let label=document.createElement("label");//label
 
-
+    let textRoutine = document.createElement("input");
+    textRoutine.type = "text";
+    textRoutine.className = "input-edit";
+    textRoutine.value =taskString;
     //button.delete
     let deleteButton=document.createElement("input");//delete button
 
@@ -26,13 +29,14 @@ let createNewTaskElement=function(taskString){
     //Each elements, needs appending
     checkBox.type="checkbox";
 
-    deleteButton.innerText="";
+    deleteButton.value="Delete";
     deleteButton.className="delete input-submit btn-ed-del";
     label.className = "sing-up";
 
     //and appending.
     listItem.appendChild(checkBox);
     listItem.appendChild(label);
+    listItem.appendChild(textRoutine);
     listItem.appendChild(deleteButton);
     return listItem;
 }
@@ -79,7 +83,7 @@ var deleteTask=function(){
 
 
 //Mark task completed
-var taskCompleted=function(){
+let taskCompleted=function(){
     console.log("Complete Task...");
 
     //Append the task list item to the #completed-tasks
@@ -90,12 +94,12 @@ var taskCompleted=function(){
 }
 
 
-var taskIncomplete=function(){
+let taskIncomplete=function(){
     console.log("Incomplete Task...");
 //Mark task as incomplete.
     //When the checkbox is unchecked
     //Append the task list item to the #incomplete-tasks.
-    var listItem=this.parentNode;
+    let listItem=this.parentNode;
     incompleteTaskHolder.appendChild(listItem);
     bindTaskEvents(listItem,taskCompleted);
 }
@@ -179,17 +183,33 @@ axios.post(url, {query: timeRoutineQuery})
         let rutinesArr = pageRutine.rutines;
         for(let r of rutinesArr) {
             let li = document.createElement("li");
-            li.innerHTML = `<input type = "text" class = "input-edit"  value = "${r.bodyRutine}">`;
+
+            let checkBox=document.createElement("input");
+            checkBox.type="checkbox";
+
+            let label=document.createElement("label");//label
+            label.innerText=`${r.bodyRutine}`;
+            label.className = "sing-up";
+
+            let textRoutine = document.createElement("input");
+            textRoutine.type = "text";
+            textRoutine.className = "input-edit";
+            textRoutine.readOnly = "readonly";
             li.className = "editMode";
-
-          let checkBox=document.createElement("input");
-          li.appendChild(checkBox);
-          checkBox.type="checkbox";
-
+            textRoutine.value = `${r.bodyRutine}`;
 
             let deleteButton=document.createElement("input");
+            deleteButton.type = "button";
             deleteButton.className="delete input-submit btn-ed-del";
             deleteButton.value = "Delete";
+
+
+
+
+
+            li.appendChild(checkBox);
+            li.appendChild(label);
+            li.appendChild(textRoutine);
             li.appendChild(deleteButton);
 
             listRoutines.appendChild(li);

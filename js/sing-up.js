@@ -100,7 +100,7 @@ document.forms[0].onsubmit = function registration(e) {
           } 
         });
         let singUp = document.getElementById("singUp");
-        singUp.href = "";
+        singUp.href = "question.html";
     }   
 }
 

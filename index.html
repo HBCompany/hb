@@ -9,7 +9,28 @@
 	<meta name="apple-mobile-web-app-status-bar" content="#e3e3e3">
 	<link rel="manifest" href="./manifest.json">
 	<link rel="stylesheet" href="css/style.css">
+	<script>
+		let deferredPrompt = null;
+		window.addEventListener('beforeinstallprompt',(e)=>{
+			e.preventDefault();
+			deferredPrompt = e;
+		});
 
+		async function install() {
+			if (deferredPrompt){
+				deferredPrompt.prompt();
+				console.log(deferredPrompt);
+				deferredPrompt.userChoice.then(function(choiceResult){
+					if(choiceResult.outcome === 'accepted'){
+						console.log('Your PWA has been installed');
+					}else{
+						console.log('User chose to not install your PWA');
+					}
+					deferredPrompt = null;
+				});
+			}
+		}
+	</script>
     <title>Sign up</title>
 </head>
     <body>
@@ -33,26 +54,28 @@
 					</a>
 				</div>
 			</div>
+				<div class="add-to head-logo"><button onclick="install()">Install</button></div>
 				<p class="copyright">Created by GREKOR</p>
 		</div>
 	</div>
 	</div>
-		<script src="js/sing.js"></script>
+
+
 		<script>
-			(function() {
-				if (!('serviceWorker' in navigator)) {
-					console.log('Service worker not supported');
-					return;
-				}
-				navigator.serviceWorker.register('service-worker.js')
-						.then(function(registration) {
-							console.log('SW successfully registered');
-						})
-						.catch(function(error) {
-							console.log('registration failed', error);
-						});
-			})();
+			if ('serviceWorker' in navigator) {
+				window.addEventListener('load', () => {
+					navigator.serviceWorker.register('service-worker.js')
+							.then(registration => {
+								console.log('Service Worker is registered', registration);
+							})
+							.catch(err => {
+								console.error('Registration failed:', err);
+							});
+				});
+			}
 		</script>
+	<script src="app.js"></script>
+	<script src="js/sing.js"></script>
 	</body>
 </html>
 
