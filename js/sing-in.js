@@ -63,8 +63,8 @@ function bit_rol(d, _) {
   return d << _ | d >>> 32 - _
 }
 ///////////////////////////////////////////////
-singInBut.onclick =  function entry() {
-  e.preventDefault();
+document.forms[0].onsubmit = function entry(e) {
+    //e.preventDefault();
 
   let nameUs = document.getElementById("nameUs").value;
   let passUs = MD5(document.getElementById("passwordUs").value);
@@ -74,9 +74,9 @@ singInBut.onclick =  function entry() {
   }else{
     
 
-    console.log(logiUs);
+    console.log(nameUs);
     let user = `{ 
-      userses(where:{login: "${logiUs}"}){
+      userses(where:{name: "${nameUs}"}){
         password
         name
       }
@@ -90,11 +90,10 @@ singInBut.onclick =  function entry() {
           console.log(passwordUs);
 
           if (passwordUs == passUs) {
-              alert("Oki");
+              let singInBut = document.getElementById("singInBut");
+              singInBut.href="head-menu.html";
           }else  alert("Noo");
       })
-    ;
-  }
-
-   
+    ;    
+  }  
 }
