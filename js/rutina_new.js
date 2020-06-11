@@ -55,7 +55,6 @@ let editTask=function(){
     let containsClass=listItem.classList.contains("editMode");
     //If class of the parent is .editmode
     if(containsClass){
-
         //switch to .editmode
         //label becomes the inputs value.
         label.innerText=editInput.value;
@@ -67,9 +66,6 @@ let editTask=function(){
     listItem.classList.toggle("editMode");
 }
 
-
-
-
 //Delete task.
 var deleteTask=function(){
     console.log("Delete Task...");
@@ -80,7 +76,6 @@ var deleteTask=function(){
     ul.removeChild(listItem);
 
 }
-
 
 //Mark task completed
 let taskCompleted=function(){
@@ -187,9 +182,9 @@ axios.post(url, {query: timeRoutineQuery})
             let checkBox=document.createElement("input");
             checkBox.type="checkbox";
 
-            let label=document.createElement("label");//label
+            /*let label=document.createElement("label");//label
             label.innerText=`${r.bodyRutine}`;
-            label.className = "sing-up";
+            label.className = "sing-up";*/
 
             let textRoutine = document.createElement("input");
             textRoutine.type = "text";
@@ -208,7 +203,7 @@ axios.post(url, {query: timeRoutineQuery})
 
 
             li.appendChild(checkBox);
-            li.appendChild(label);
+            //li.appendChild(label);
             li.appendChild(textRoutine);
             li.appendChild(deleteButton);
 
