@@ -7,7 +7,7 @@
 	<meta name="theme-color" content="#8B53A6">
 	<link rel="apple-touch-icon" href="./img/icons/icon-128x128.png">
 	<meta name="apple-mobile-web-app-status-bar" content="#e3e3e3">
-	<link rel="manifest" href="./manifest.webmanifest">
+	<link rel="manifest" href="manifest.webmanifest">
 	<link rel="stylesheet" href="css/style.css">
 	<script>
 	</script>
@@ -42,7 +42,7 @@
 
 
 		<script>
-			/*if ('serviceWorker' in navigator) {
+			if ('serviceWorker' in navigator) {
 				window.addEventListener('load', () => {
 					navigator.serviceWorker.register('service-worker.js')
 							.then(registration => {
@@ -52,7 +52,7 @@
 								console.error('Registration failed:', err);
 							});
 				});
-			}*/
+			}
 		</script>
 	<script src="js/index.js"></script>
 	</body>
