@@ -90,6 +90,10 @@
         border-bottom: 4px solid #9e7676;
     }
 
+    #singInBut{
+        margin-top: 10%;
+    }
+
     .input-email{
         width: 45vh;
         height:6vh ;
