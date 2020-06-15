@@ -13,51 +13,102 @@
     <link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Russo+One&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <title>Недельное меню</title>
 </head>
 <body>
 
 <div class="grid main">
     <div class="block-logo">
-        <div><a href="head-menu.html"><img src="img/double-left.png" class="image-men" alt="Назад"></a></div>
+        <div><a id="linkMenu" href=""><img src="img/double-left.png" class="image-men" alt="Назад"></a></div>
         <div class="head-logo">
             <h1>Недельное меню</h1>
         </div>
         <div><a href="#" class=' open-modal' data-modal="#modal1"><img src="img/instr.png" class="image-men" alt="Инструкция"></a></div>
     </div>
-    <div class="zone-block">
-        <h2>Понедельник (25.05.20)</h2>
-        <h3>Завтрак: </h3>
-        <input class="input-text" id="" type="text" value="Омлет">
-        <h3>Обед: </h3>
-        <input class="input-text" id="" type="text" value="Борщ">
-        <h3>Ужин: </h3>
-        <input class="input-text" id="" type="text" value="Чай">
-        <p>
-        </p>
-    </div>
-    <div class="zone-block">
-        <h2>Вторник (26.05.20)</h2>
-        <h3>Завтрак: </h3>
-        <input class="input-text" id="" type="text" value="Омлет">
-        <h3>Обед: </h3>
-        <input class="input-text" id="" type="text" value="Борщ">
-        <h3>Ужин: </h3>
-        <input class="input-text" id="" type="text" value="Чай">
-        <p>
-        </p>
-    </div>
-    <div class="zone-block">
-        <h2>Среда (27.05.20)</h2>
-        <h3>Завтрак: </h3>
-        <input class="input-text" id="" type="text" value="Омлет">
-        <h3>Обед: </h3>
-        <input class="input-text" id="" type="text" value="Борщ">
-        <h3>Ужин: </h3>
-        <input class="input-text" id="" type="text" value="Чай">
-        <p>
-        </p>
-    </div>
+    <form>
+        <div class="zone-block">
+            <h2>Понедельник</h2>
+            <h3>Завтрак: </h3>
+            <input class="input-text menu" id="" type="text" value="">
+            <h3>Обед: </h3>
+            <input class="input-text menu" id="" type="text" value="">
+            <h3>Ужин: </h3>
+            <input class="input-text menu" id="" type="text" value="">
+            <p>
+            </p>
+        </div>
+        <div class="zone-block">
+            <h2>Вторник</h2>
+            <h3>Завтрак: </h3>
+            <input class="input-text menu" id="" type="text" value="">
+            <h3>Обед: </h3>
+            <input class="input-text menu" id="" type="text" value="">
+            <h3>Ужин: </h3>
+            <input class="input-text menu" id="" type="text" value="">
+            <p>
+            </p>
+        </div>
+        <div class="zone-block">
+            <h2>Среда</h2>
+            <h3>Завтрак: </h3>
+            <input class="input-text menu" id="" type="text" value="">
+            <h3>Обед: </h3>
+            <input class="input-text menu" id="" type="text" value="">
+            <h3>Ужин: </h3>
+            <input class="input-text menu" id="" type="text" value="">
+            <p>
+            </p>
+        </div>
+        <div class="zone-block">
+            <h2>Четверг</h2>
+            <h3>Завтрак: </h3>
+            <input class="input-text menu" id="" type="text" value="">
+            <h3>Обед: </h3>
+            <input class="input-text menu" id="" type="text" value="">
+            <h3>Ужин: </h3>
+            <input class="input-text menu" id="" type="text" value="">
+            <p>
+            </p>
+        </div>
+        <div class="zone-block">
+            <h2>Пятница</h2>
+            <h3>Завтрак: </h3>
+            <input class="input-text menu" id="" type="text" value="">
+            <h3>Обед: </h3>
+            <input class="input-text menu" id="" type="text" value="">
+            <h3>Ужин: </h3>
+            <input class="input-text menu" id="" type="text" value="">
+            <p>
+            </p>
+        </div>
+        <div class="zone-block">
+            <h2>Суббота</h2>
+            <h3>Завтрак: </h3>
+            <input class="input-text menu" id="" type="text" value="">
+            <h3>Обед: </h3>
+            <input class="input-text menu" id="" type="text" value="">
+            <h3>Ужин: </h3>
+            <input class="input-text menu" id="" type="text" value="">
+            <p>
+            </p>
+        </div>
+        <div class="zone-block">
+            <h2>Воскресенье</h2>
+            <h3>Завтрак: </h3>
+            <input class="input-text menu" id="" type="text" value="">
+            <h3>Обед: </h3>
+            <input class="input-text menu" id="" type="text" value="">
+            <h3>Ужин: </h3>
+            <input class="input-text menu" id="" type="text" value="">
+            <p>
+            </p>
+        </div>
+        <div>
+            <input type="button" name="" id="butSave" value="Save">
+        </div>
+    </form>
+   
 
 
 
@@ -76,6 +127,7 @@
     </div>
 
 </div>
+<script src="js/menu_report.js"></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
 <script  src="js/modal.js"></script>
 <!--<script src="app.js"></script>-->

@@ -111,9 +111,8 @@ var ajaxRequest=function(){
 var bindTaskEvents=function(taskListItem,checkBoxEventHandler){
     console.log("bind list item events");
 //select ListItems children
-    var checkBox=taskListItem.querySelector("input[type=checkbox]");
-    var deleteButton=taskListItem.querySelector("input.delete");
-
+    var checkBox = taskListItem.querySelector("input[type=checkbox]");
+    var deleteButton = taskListItem.querySelector("input.delete");
 
     //Bind editTask to edit button.
     //Bind deleteTask to delete button.
@@ -198,18 +197,12 @@ axios.post(url, {query: timeRoutineQuery})
             deleteButton.className="delete input-submit btn-ed-del";
             deleteButton.value = "Delete";
 
-
-
-
-
             li.appendChild(checkBox);
             //li.appendChild(label);
             li.appendChild(textRoutine);
             li.appendChild(deleteButton);
 
             listRoutines.appendChild(li);
-
-
         }
     })
 ;
