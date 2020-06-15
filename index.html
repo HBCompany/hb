@@ -10,26 +10,6 @@
 	<link rel="manifest" href="./manifest.webmanifest">
 	<link rel="stylesheet" href="css/style.css">
 	<script>
-		let deferredPrompt = null;
-		window.addEventListener('beforeinstallprompt',(e)=>{
-			e.preventDefault();
-			deferredPrompt = e;
-		});
-
-		async function install() {
-			if (deferredPrompt){
-				deferredPrompt.prompt();
-				console.log(deferredPrompt);
-				deferredPrompt.userChoice.then(function(choiceResult){
-					if(choiceResult.outcome === 'accepted'){
-						console.log('Your PWA has been installed');
-					}else{
-						console.log('User chose to not install your PWA');
-					}
-					deferredPrompt = null;
-				});
-			}
-		}
 	</script>
     <title>Sign up</title>
 </head>
