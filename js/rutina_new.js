@@ -41,31 +41,8 @@ let createNewTaskElement=function(taskString){
     return listItem;
 }
 
-//Edit an existing task.
-
-let editTask=function(){
-    console.log("Edit Task...");
-    console.log("Change 'edit' to 'save'");
 
 
-    let listItem=this.parentNode;
-
-    let editInput=listItem.querySelector('input[type=text]');
-    let label=listItem.querySelector("label");
-    let containsClass=listItem.classList.contains("editMode");
-    //If class of the parent is .editmode
-    if(containsClass){
-
-        //switch to .editmode
-        //label becomes the inputs value.
-        label.innerText=editInput.value;
-    }else{
-        editInput.value=label.innerText;
-    }
-
-    //toggle .editmode on the parent.
-    listItem.classList.toggle("editMode");
-}
 
 
 
