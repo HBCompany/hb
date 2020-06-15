@@ -295,7 +295,7 @@
     .input-submit{
         display: block;
         width: 20%;
-        height:6.5vh ;
+        height:38px ;
         border:none;
         background-color:#e3e3e3;
         color:#8B53A6;
@@ -319,7 +319,7 @@
 
     .btn-ed-del{
         width: 12vh;
-        height:5vh ;
+        height:30px ;
         font-size: 90%;
         margin-top:0;
     }
