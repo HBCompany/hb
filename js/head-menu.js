@@ -1,5 +1,3 @@
-
-
 filterSelection("animals");
 function filterSelection(c) {
   let x, i;
