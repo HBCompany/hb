@@ -155,11 +155,7 @@
         box-shadow: 4px 4px 4px 1px rgba(0, 0, 0, 0.4);
     }
 
-    .menu:active{
-        border-radius: 15px;
-        background-color: green;
-        box-shadow: none;
-    }
+
 
 
 

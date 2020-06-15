@@ -21,6 +21,7 @@ let createNewTaskElement=function(taskString){
     textRoutine.type = "text";
     textRoutine.className = "input-edit";
     textRoutine.value =taskString;
+    textRoutine.readOnly = "readonly";
     //button.delete
     let deleteButton=document.createElement("input");//delete button
 
@@ -44,29 +45,6 @@ let createNewTaskElement=function(taskString){
 
 
 
-let editTask=function(){
-    console.log("Edit Task...");
-    console.log("Change 'edit' to 'save'");
-
-
-    let listItem=this.parentNode;
-
-    let editInput=listItem.querySelector('input[type=text]');
-    let label=listItem.querySelector("label");
-    let containsClass=listItem.classList.contains("editMode");
-    //If class of the parent is .editmode
-    if(containsClass){
-        //switch to .editmode
-        //label becomes the inputs value.
-        label.innerText=editInput.value;
-    }else{
-        editInput.value=label.innerText;
-    }
-
-    //toggle .editmode on the parent.
-    listItem.classList.toggle("editMode");
-}
-
 //Delete task.
 var deleteTask=function(){
     console.log("Delete Task...");
@@ -86,7 +64,6 @@ let taskCompleted=function(){
     var listItem=this.parentNode;
     completedTasksHolder.appendChild(listItem);
     bindTaskEvents(listItem, taskIncomplete);
-
 }
 
 
@@ -181,10 +158,6 @@ axios.post(url, {query: timeRoutineQuery})
 
             let checkBox=document.createElement("input");
             checkBox.type="checkbox";
-
-            /*let label=document.createElement("label");//label
-            label.innerText=`${r.bodyRutine}`;
-            label.className = "sing-up";*/
 
             let textRoutine = document.createElement("input");
             textRoutine.type = "text";
