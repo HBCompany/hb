@@ -56,6 +56,10 @@
     .add-button {
         width:50%;
         height:7vh;
+        position: absolute;
+        top: 1px;
+        left: 1px;
+
     }
 
 
