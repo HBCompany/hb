@@ -64,7 +64,7 @@ function bit_rol(d, _) {
 }
 ///////////////////////////////////////////////
 document.forms[0].onsubmit = function entry(e) {
-    //e.preventDefault();
+    e.preventDefault();
 
   let nameUs = document.getElementById("nameUs").value;
   let passUs = MD5(document.getElementById("passwordUs").value);
@@ -82,9 +82,7 @@ document.forms[0].onsubmit = function entry(e) {
       }
     }`;
 
-    function CheckPassword() {
-      return document.location.href = "http://www.google.com";
-    }
+    document.location.href = "head-menu.html";
 
 
 
@@ -94,6 +92,7 @@ document.forms[0].onsubmit = function entry(e) {
           passwordUs = response.data.data.userses[0].password;
           console.log(passUs);
           console.log(passwordUs);
+        document.location.href = "head-menu.html";
       })
     ;    
   }  

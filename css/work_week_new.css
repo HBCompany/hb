@@ -52,6 +52,15 @@
         margin-left: 3%;
     }
 
+    span{
+        font-size:14px;
+        text-align:left;
+        color:#e3e3e3;
+        font-family: 'Montserrat' ;
+        letter-spacing: 1px;
+        margin-left: 3%;
+    }
+
 
     a{
         text-decoration: none;
@@ -103,6 +112,8 @@
 
     }
 
+
+
     .menu{
         border-radius: 15px;
         border:1px solid #e3e3e3;
@@ -118,7 +129,6 @@
     }
 
     .content-block{
-        background:  ;
         margin-top: 3%;
     }
 
@@ -134,6 +144,21 @@
         letter-spacing: 2px;
     }
 
+    input-btn{
+        width: 9vh;
+        height: 6.5vh;
+        border: none;
+        background-color: #e3e3e3;
+        color: #8B53A6;
+        border-radius: 30px;
+        font-size: 100%;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        margin-left: 2%;
+        border-bottom: 4px solid #9e7676;
+        letter-spacing: 1px;
+        font-family: 'Montserrat';
+        margin-top: 3%;
+    }
 
 
 

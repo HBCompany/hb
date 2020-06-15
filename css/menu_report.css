@@ -62,6 +62,15 @@
         letter-spacing: 1px;
     }
 
+    li{
+        color:#8B53A6;
+        list-style-type: none;
+        text-align: center;
+        margin-left: -17%;
+        border-bottom:1px solid #8B53A6;
+        padding-top: 5%;
+    }
+
 
     a{
         text-decoration: none;
@@ -84,6 +93,22 @@
         height: 97vh;
         grid-gap: 2px;
         margin:0 auto;
+    }
+
+    #butSave{
+        display: block;
+        width: 52vh;
+        height:6vh;
+        border: none;
+        background-color: #e3e3e3;
+        color: #8B53A6;
+        border-radius: 10px;
+        font-size: 16px;
+        margin-left: 1%;
+        margin-top:3%;
+        border-bottom: 4px solid #9e7676;
+        letter-spacing: 1px;
+        font-family: 'Montserrat';
     }
 
     .main{

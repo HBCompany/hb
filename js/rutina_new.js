@@ -202,8 +202,9 @@ axios.post(url, {query: timeRoutineQuery})
             //li.appendChild(label);
             li.appendChild(textRoutine);
             li.appendChild(deleteButton);
-
+            bindTaskEvents(li, taskCompleted);
             listRoutines.appendChild(li);
+
         }
     })
 ;
