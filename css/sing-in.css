@@ -10,6 +10,11 @@
         src: url("../fonts/Montserrat-Light.ttf");
     }
 
+    @font-face {
+        font-family: 'Permanent Marker' ;
+        src: url("../fonts/PermanentMarker-Regular.ttf");
+    }
+
     input{
         font-family: 'Montserrat' ;
         letter-spacing: 1px;

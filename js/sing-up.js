@@ -99,6 +99,7 @@ document.forms[0].onsubmit = function registration(e) {
                 alert("Изменение данных произведено успешно!");
           } 
         });
+
         let singUp = document.getElementById("singUp");
         //singUp.href = "question.html";
     }   

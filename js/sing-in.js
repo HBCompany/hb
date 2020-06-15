@@ -70,9 +70,9 @@ document.forms[0].onsubmit = function entry(e) {
   let passUs = MD5(document.getElementById("passwordUs").value);
 
   if (nameUs == "" || passUs == "") {
-    alert("Введите данные!")
+    alert("Введите данные!");
   }else{
-    
+
 
     console.log(nameUs);
     let user = `{ 
@@ -82,18 +82,20 @@ document.forms[0].onsubmit = function entry(e) {
       }
     }`;
 
+    function CheckPassword() {
+      return document.location.href = "http://www.google.com";
+    }
+
+
+
     axios.post(url, {query: user})
       .then(response => {
         console.log(response.data.data.userses);
           passwordUs = response.data.data.userses[0].password;
           console.log(passUs);
           console.log(passwordUs);
-
-          if (passwordUs == passUs) {
-              let singInBut = document.getElementById("singInBut");
-              singInBut.href="head-menu.html";
-          }else  alert("Noo");
       })
     ;    
   }  
 }
+

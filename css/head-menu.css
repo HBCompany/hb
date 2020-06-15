@@ -9,6 +9,11 @@
         src: url("../fonts/Montserrat-Light.ttf");
     }
 
+    @font-face {
+        font-family: 'Permanent Marker' ;
+        src: url("../fonts/PermanentMarker-Regular.ttf");
+    }
+
 
     input {
         text-align: center;

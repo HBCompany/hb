@@ -41,7 +41,8 @@ let createNewTaskElement=function(taskString){
     return listItem;
 }
 
-//Edit an existing task.
+
+
 
 let editTask=function(){
     console.log("Edit Task...");
