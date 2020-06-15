@@ -1,5 +1,6 @@
 window.addEventListener('beforeinstallprompt', function(event) {
     // not show the default browser install app prompt
+    //comments
     event.preventDefault();
 
     // add the banner here or make it visible
