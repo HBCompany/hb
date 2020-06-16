@@ -13,12 +13,14 @@ function getQueryVariable(variable)
 
 let user = getQueryVariable('id');
 let roomId = getQueryVariable('room'); 
+
 const roomInfo = `{
   users(where:{id:"${user}"}){
-    rooms{
+    rooms(where:{id:"${roomId}"}){
       nameRoom
       id
       zones{
+        id
         nameZone
         bodyZone
         smallBodyZone
@@ -30,20 +32,28 @@ const roomInfo = `{
 let room = [];
 axios.post(url, {query: roomInfo})
     .then(response => {
-        room = response.data.data.users.rooms;
+        room = response.data.data.users.rooms[0];
         console.log(room);
         let nameZone = document.getElementsByClassName("nameZone");
         let smallBodyZone = document.getElementsByClassName("bodyZone");
         let linkZone = document.getElementsByClassName("link");
         let nameRoom = document.getElementById("room");
-        nameRoom.textContent = room[roomId].nameRoom;
+        nameRoom.textContent = room.nameRoom;
 
-        let zonesArr = room[roomId].zones;
+        let zonesArr = room.zones;
+
         for(let i = 0; i < 5; i++){
             nameZone[i].textContent = zonesArr[i].nameZone;
             smallBodyZone[i].textContent = zonesArr[i].smallBodyZone;
-            linkZone[i].href = "zone.html?id=" + zonesArr[i].id;
+            linkZone[i].href = "zone.html?id=" + user + "&room=" + room.id 
+                                + "&zone=" + zonesArr[i].id;
         }
 
     })
 ;
+
+let back = document.getElementById("back");
+back.onclick = function(e){
+    e.preventDefault();
+    document.location.href = "head-menu.html?id=" + user;
+}

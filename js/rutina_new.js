@@ -234,7 +234,6 @@ var elements = document.querySelectorAll(".delete");
 for (var i = 0; i < elements.length; i++) {
   elements[i].onclick = function(){
     
-    
   };
 }
 

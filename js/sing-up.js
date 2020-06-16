@@ -105,7 +105,20 @@ document.forms[0].onsubmit = function registration(e) {
                   dinSun:""
                   supSun:""
                   status: PUBLISHED
-            }}}){
+            }
+          }
+          rooms:{connect:[
+            {id:"ck3om1tc5tmeu0b66gn6fcrsr"}
+            {id:"ck3om2fhctmi10b66ij8lvxbf"}
+            {id:"ck3om2w32tc7a0b20z50z803m"}
+            {id:"ck3om34vvtmjo0b6664o2lnfb"}
+            {id:"ckam8ry13z1820b20tfbpjvfb"}
+          ]}
+          pageRutines:{connect:[
+            {id:"ck444effec68d0b73itm6ukiv"}
+            {id:"ck444hdooodp60b66no26sgk1"}
+          ]}
+        }){
         id
       }}`;
 

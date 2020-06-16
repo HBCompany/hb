@@ -44,30 +44,43 @@ function getQueryVariable(variable)
 }
 
 
-let zoneName = getQueryVariable('id'); 
+let user = getQueryVariable('id'); 
+let roomName = getQueryVariable("room");
+let zoneName = getQueryVariable("zone");
 const bodyZoneShow = `{
-  zone(where:{id:"${zoneName}"}){
-    nameZone
-    bodyZone
-    rooms{
-     id
-     nameRoom
+  users(where:{id:"${user}"}){
+    rooms(where:{id:"${roomName}"}){
+      zones(where:{id:"${zoneName}"}){
+        nameZone
+        bodyZone
+        smallBodyZone
+      }
     }
   }
 }`;
 
+
 let zone = [];
 axios.post(url, {query: bodyZoneShow})
     .then(response => {
-        zone = response.data.data.zone;
+        zone = response.data.data.users.rooms[0];
         console.log(zone);
         let nameZone = document.getElementById("nameZone");
-        nameZone.textContent = zone.nameZone;
+        nameZone.textContent = zone.zones[0].nameZone;
 
         let bodyZone = document.getElementById("bodyZone");
-        bodyZone.textContent = zone.bodyZone;
-
-        let predZone = document.getElementById("predZone");
-        predZone.href = "pred_zone.html?id=" + zone.rooms[0].id;
+        bodyZone.textContent = zone.zones[0].bodyZone;
     })
 ;
+
+let yes = document.getElementById("yes");
+yes.onclick = function(e){
+    e.preventDefault();
+    document.location.href = "head-menu.html?id=" + user;
+}
+
+let back = document.getElementById("back");
+back.onclick = function(e){
+    e.preventDefault();
+    document.location.href = "pred_zone.html?id=" + user  + "&room=" + roomName;
+}

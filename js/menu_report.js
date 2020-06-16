@@ -12,7 +12,7 @@ function getQueryVariable(variable)
 }
 
 let user = getQueryVariable('id');
-console.log(user);
+let idMenu = getQueryVariable("menu");
 
 const showMenu = `{
   users(where:{id:"${user}"}){
@@ -48,76 +48,76 @@ axios.post(url, {query: showMenu})
         menu = response.data.data.users;
         console.log(menu);
         let placeMenu = document.getElementsByClassName("menu");
-        let linkMenu = document.getElementById("linkMenu");
-        //console.log(placeMenu);
 
-        let menuArr = menu.menus;
+        let menuArr = menu.menus[0];
         
-        placeMenu[0].value = menuArr[1].breakMon;
-        placeMenu[1].value = menuArr[1].dinMon;
-        placeMenu[2].value = menuArr[1].supMon;
-        placeMenu[3].value = menuArr[1].breakTue;
-        placeMenu[4].value = menuArr[1].dinTue;
-        placeMenu[5].value = menuArr[1].supTue;
-        placeMenu[6].value = menuArr[1].breakWed;
-        placeMenu[7].value = menuArr[1].dinWed;
-        placeMenu[8].value = menuArr[1].supWed;
-        placeMenu[9].value = menuArr[1].breakThu;
-        placeMenu[10].value = menuArr[1].dinThu;
-        placeMenu[11].value = menuArr[1].supThu;
-        placeMenu[12].value = menuArr[1].breakFri;
-        placeMenu[13].value = menuArr[1].dinFri;
-        placeMenu[14].value = menuArr[1].supFri;
-        placeMenu[15].value = menuArr[1].breakSat;
-        placeMenu[16].value = menuArr[1].dinSat;
-        placeMenu[17].value = menuArr[1].supSat;
-        placeMenu[18].value = menuArr[1].breakSun;
-        placeMenu[19].value = menuArr[1].dinSun;
-        placeMenu[20].value = menuArr[1].supSun;
+        placeMenu[0].value = menuArr.breakMon;
+        placeMenu[1].value = menuArr.dinMon;
+        placeMenu[2].value = menuArr.supMon;
+        placeMenu[3].value = menuArr.breakTue;
+        placeMenu[4].value = menuArr.dinTue;
+        placeMenu[5].value = menuArr.supTue;
+        placeMenu[6].value = menuArr.breakWed;
+        placeMenu[7].value = menuArr.dinWed;
+        placeMenu[8].value = menuArr.supWed;
+        placeMenu[9].value = menuArr.breakThu;
+        placeMenu[10].value = menuArr.dinThu;
+        placeMenu[11].value = menuArr.supThu;
+        placeMenu[12].value = menuArr.breakFri;
+        placeMenu[13].value = menuArr.dinFri;
+        placeMenu[14].value = menuArr.supFri;
+        placeMenu[15].value = menuArr.breakSat;
+        placeMenu[16].value = menuArr.dinSat;
+        placeMenu[17].value = menuArr.supSat;
+        placeMenu[18].value = menuArr.breakSun;
+        placeMenu[19].value = menuArr.dinSun;
+        placeMenu[20].value = menuArr.supSun;
         
-        linkMenu.href = "head-menu.html?id=" + user;
     })
 ;
 
-
-
-
-
 let butSave = document.getElementById("butSave");
-butSave.onclick = function showMenu(e) {
+butSave.onclick = function (e) {
     e.preventDefault();
 
     let newMenu = document.getElementsByClassName("menu");
     let mutNewMenu = `mutation newMenu{
-	  createMenu(
-	    data:{
-	      breakMon:"${newMenu[0].value}"
-	      dinMon:"${newMenu[1].value}"
-	      supMon:"${newMenu[2].value}"
-	      breakTue:"${newMenu[3].value}"
-	      dinTue:"${newMenu[4].value}"
-	      supTue:"${newMenu[5].value}"
-	      breakWed:"${newMenu[6].value}"
-	      dinWed:"${newMenu[7].value}"
-	      supWed:"${newMenu[8].value}"
-	      breakThu:"${newMenu[9].value}"
-	      dinThu:"${newMenu[10].value}"
-	      supThu:"${newMenu[11].value}"
-	      breakFri:"${newMenu[12].value}"
-	      dinFri:"${newMenu[13].value}"
-	      supFri:"${newMenu[14].value}"
-	      breakSat:"${newMenu[15].value}"
-	      dinSat:"${newMenu[16].value}"
-	      supSat:"${newMenu[17].value}"
-	      breakSun:"${newMenu[18].value}"
-	      dinSun:"${newMenu[19].value}"
-	      supSun:"${newMenu[20].value}"
-	      users:{connect:{id:"${user}"}}
-	      status: PUBLISHED
-	    }){
-	    id
-	  	}
-	}`;
+      updateUsers(
+        where:{id:"${user}"}
+        data:{
+          menus:{
+            update:{
+              where:{id:"${idMenu}"}
+              data:{
+    	      breakMon:"${newMenu[0].value}"
+    	      dinMon:"${newMenu[1].value}"
+    	      supMon:"${newMenu[2].value}"
+    	      breakTue:"${newMenu[3].value}"
+    	      dinTue:"${newMenu[4].value}"
+    	      supTue:"${newMenu[5].value}"
+    	      breakWed:"${newMenu[6].value}"
+    	      dinWed:"${newMenu[7].value}"
+    	      supWed:"${newMenu[8].value}"
+    	      breakThu:"${newMenu[9].value}"
+    	      dinThu:"${newMenu[10].value}"
+    	      supThu:"${newMenu[11].value}"
+    	      breakFri:"${newMenu[12].value}"
+    	      dinFri:"${newMenu[13].value}"
+    	      supFri:"${newMenu[14].value}"
+    	      breakSat:"${newMenu[15].value}"
+    	      dinSat:"${newMenu[16].value}"
+    	      supSat:"${newMenu[17].value}"
+    	      breakSun:"${newMenu[18].value}"
+    	      dinSun:"${newMenu[19].value}"
+    	      supSun:"${newMenu[20].value}"
+    	      }
+            }   
+          }
+        }
+      ) {
+        id
+      }
+    }`;
 
 	console.log(mutNewMenu);
 	axios.post(url, {query: mutNewMenu})
@@ -125,9 +125,15 @@ butSave.onclick = function showMenu(e) {
           console.log(response.data);
           let createMenu = response.data.data.id;
           if (createMenu) {
-                alert("Изменение данных произведено успешно!");
+                document.location.href = "head-menu.html?id=" + user;
           } 
     });
 
+    
 }
 
+let back = document.getElementById("back");
+back.onclick = function(e){
+    e.preventDefault();
+    document.location.href = "head-menu.html?id=" + user;
+}

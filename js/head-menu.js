@@ -57,7 +57,7 @@ let user = getQueryVariable('id');
 console.log(user);
 
 let room = `{
-  users(where:{id:"ckbht5rizfhur0b14n27wnn2c"}){
+  users(where:{id:"${user}"}){
     rooms{
       nameRoom
       id
@@ -65,6 +65,9 @@ let room = `{
     pageRutines{
       id
       time
+    }
+    menus{
+      id
     }
   }
 }`;
@@ -74,6 +77,7 @@ axios.post(url, {query: room})
     console.log(response.data);
     let timeRut = response.data.data.users.pageRutines;
     let room = response.data.data.users.rooms;
+    let idMenu = response.data.data.users.menus[0].id;
     
     let kitchen = document.getElementById("kitchen");
     let bathrom = document.getElementById("bathrom");
@@ -100,7 +104,7 @@ axios.post(url, {query: room})
     }
     wekMenu.onclick = function(e){
       e.preventDefault();
-      document.location.href = "menu_report.html?id=" + user;
+      document.location.href = "menu_report.html?id=" + user + "&menu=" + idMenu;
     } 
     kitchen.onclick = function(e){
       e.preventDefault();
@@ -124,6 +128,3 @@ axios.post(url, {query: room})
     }        
 
 });
-
-
-    
