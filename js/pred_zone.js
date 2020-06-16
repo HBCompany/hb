@@ -11,15 +11,18 @@ function getQueryVariable(variable)
 }
 
 
-let roomName = getQueryVariable('id'); 
+let user = getQueryVariable('id');
+let roomId = getQueryVariable('room'); 
 const roomInfo = `{
-    room(where:{id:"${roomName}"}){
-    nameRoom
-    zones{
+  users(where:{id:"${user}"}){
+    rooms{
+      nameRoom
       id
-      nameZone
-      bodyZone
-      smallBodyZone
+      zones{
+        nameZone
+        bodyZone
+        smallBodyZone
+      }
     }
   }
 }`;
@@ -27,15 +30,15 @@ const roomInfo = `{
 let room = [];
 axios.post(url, {query: roomInfo})
     .then(response => {
-        room = response.data.data.room;
+        room = response.data.data.users.rooms;
         console.log(room);
         let nameZone = document.getElementsByClassName("nameZone");
         let smallBodyZone = document.getElementsByClassName("bodyZone");
         let linkZone = document.getElementsByClassName("link");
         let nameRoom = document.getElementById("room");
-        nameRoom.textContent = room.nameRoom;
+        nameRoom.textContent = room[roomId].nameRoom;
 
-        let zonesArr = room.zones;
+        let zonesArr = room[roomId].zones;
         for(let i = 0; i < 5; i++){
             nameZone[i].textContent = zonesArr[i].nameZone;
             smallBodyZone[i].textContent = zonesArr[i].smallBodyZone;

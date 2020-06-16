@@ -131,28 +131,29 @@ function getQueryVariable(variable)
 }
 
 
-let pageRut = getQueryVariable('id'); 
+let user = getQueryVariable('id'); 
+let timeRut = getQueryVariable("time");
+console.log(timeRut);
 const timeRoutineQuery = `{
- pageRutine (where:{id:"${pageRut}"}){
-    time
-    rutines{
-      bodyRutine
-    }
+  users(where:{id:"${user}"}){
+    pageRutines(where:{id:"${timeRut}"}){
+      time
+      rutines{
+        bodyRutine
+      }
+    }   
   }
 }`;
-
-
 
 let pageRutine = [];
 axios.post(url, {query: timeRoutineQuery})
     .then(response => {
-        pageRutine = response.data.data.pageRutine;
-        console.log(pageRutine);
+        pageRutine = response.data.data.users.pageRutines;
         let time = document.getElementById("timeRut");
-        time.textContent = pageRutine.time;
+        time.textContent = pageRutine[0].time;
 
         let listRoutines = document.getElementById('incomplete-tasks');
-        let rutinesArr = pageRutine.rutines;
+        let rutinesArr = pageRutine[0].rutines;
         let a = 0;
         for(let r of rutinesArr) {
             let li = document.createElement("li");
