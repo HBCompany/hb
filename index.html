@@ -13,7 +13,6 @@
     <title>Sign up</title>
 </head>
     <body>
-
 	<div class="grid main">
 		<div class="head-logo">
 			<img src="img/logo.png" class="image-men" alt="Настройки">
@@ -22,40 +21,34 @@
 		<div >
 			<div class="grid-footer">
 				<div class="block-form">
-
-				<div >
-
-					<a href="sing-in.html"><input  type="submit" value="SIGN IN" class="input-email" ></a>
+					<div>
+						<a href="sing-in.html"><input  type="submit" value="SIGN IN" class="input-email" ></a>
+					</div>
+					<div >
+						<a href="sing-up.html">
+							<input  type="submit" value="SIGN UP" class="input-email" >
+						</a>
+					</div>
 				</div>
-				<div >
-					<a href="sing-up.html">
-						<input  type="submit" value="SIGN UP" class="input-email" >
-					</a>
-				</div>
-			</div>
-
-
-
 				<button class="add-button head-logo">Add to home screen</button>
 				<p class="copyright">Created by GREKOR</p>
+			</div>
 		</div>
 	</div>
-	</div>
 
-
-		<script>
-			if ('serviceWorker' in navigator) {
-				window.addEventListener('load', () => {
-					navigator.serviceWorker.register('service-worker.js')
-							.then(registration => {
-								console.log('Service Worker is registered', registration);
-							})
-							.catch(err => {
-								console.error('Registration failed:', err);
-							});
-				});
-			}
-		</script>
+	<script>
+		if ('serviceWorker' in navigator) {
+			window.addEventListener('load', () => {
+				navigator.serviceWorker.register('service-worker.js')
+						.then(registration => {
+							console.log('Service Worker is registered', registration);
+						})
+						.catch(err => {
+							console.error('Registration failed:', err);
+						});
+			});
+		}
+	</script>
 	</body>
 </html>
 

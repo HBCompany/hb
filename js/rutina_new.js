@@ -153,6 +153,7 @@ axios.post(url, {query: timeRoutineQuery})
 
         let listRoutines = document.getElementById('incomplete-tasks');
         let rutinesArr = pageRutine.rutines;
+        let a = 0;
         for(let r of rutinesArr) {
             let li = document.createElement("li");
 
@@ -170,6 +171,7 @@ axios.post(url, {query: timeRoutineQuery})
             deleteButton.type = "button";
             deleteButton.className="delete input-submit btn-ed-del";
             deleteButton.value = "Delete";
+            deleteButton.id = "del" + a;
 
             li.appendChild(checkBox);
             //li.appendChild(label);
@@ -177,10 +179,11 @@ axios.post(url, {query: timeRoutineQuery})
             li.appendChild(deleteButton);
             bindTaskEvents(li, taskCompleted);
             listRoutines.appendChild(li);
-
+            a++;
         }
     })
 ;
+
 
 addButton.onclick = function newElement() {
 
@@ -224,3 +227,11 @@ addButton.onclick = function newElement() {
          }
       });
 };
+
+var elements = document.querySelectorAll(".delete");
+for (var i = 0; i < elements.length; i++) {
+  elements[i].onclick = function(){
+    
+    
+  };
+}

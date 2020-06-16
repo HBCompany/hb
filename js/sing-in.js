@@ -82,7 +82,7 @@ document.forms[0].onsubmit = function entry(e) {
       }
     }`;
 
-    document.location.href = "head-menu.html";
+    //document.location.href = "head-menu.html";
 
 
 
@@ -92,7 +92,9 @@ document.forms[0].onsubmit = function entry(e) {
           passwordUs = response.data.data.userses[0].password;
           console.log(passUs);
           console.log(passwordUs);
-        document.location.href = "head-menu.html";
+          if (passUs == passwordUs) {
+            document.location.href = "head-menu.html"; 
+          }
       })
     ;    
   }  

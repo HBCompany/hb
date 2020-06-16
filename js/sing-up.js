@@ -66,9 +66,8 @@ function bit_rol(d, _) {
 
 let singUpBut = document.getElementById("singUpBut");
 
-
 document.forms[0].onsubmit = function registration(e) {
-    e.preventDefault();
+    //e.preventDefault();
 
     let nameUs = document.getElementById("nameUs").value;
     let passUs = MD5(document.getElementById("passwordUs").value);
@@ -76,32 +75,29 @@ document.forms[0].onsubmit = function registration(e) {
       alert("Введите данные!")
     }else{
       
+    let newUser = `mutation createUser{
+      createUsers(
+        data:{
+          name:"${nameUs}"
+          password:"${passUs}"
+          status: PUBLISHED
+        }){
+        id
+      }
+    }`;
 
-      let newUser = `mutation createUser{
-        createUsers(
-          data:{
-            name:"${nameUs}"
-            password:"${passUs}"
-            status: PUBLISHED
-          }){
-          id
-        }
-      }`;
+    console.log(newUser);
 
-      console.log(newUser);
 
-      //login:"${logiUs}"
-      axios.post(url, {query: newUser})
-        .then(response => {
-          console.log(response.data);
-          let createUser = response.data.data.id;
-          if (createUser) {
-                alert("Изменение данных произведено успешно!");
-          } 
-        });
-
-        let singUp = document.getElementById("singUp");
-        //singUp.href = "question.html";
+    //login:"${logiUs}"
+    axios.post(url, {query: newUser})
+      .then(response => {
+        console.log(response.data);
+        let createUser = response.data.data.id;
+      });
+      //document.location.href = "head-menu.html";
+    let singUp = document.getElementById("singUp");
+    //singUp.href = "question.html";
     }   
 }
 
