@@ -70,77 +70,54 @@ document.forms[0].onsubmit = function registration(e) {
     e.preventDefault();
 
     let nameUs = document.getElementById("nameUs").value;
-    let passUs = MD5(document.getElementById("passwordUs").value);
-    if (nameUs == "" || nameUs == "  ") {
+    let passUs1 = document.getElementById("passwordUs").value;
+    if (nameUs == "" || nameUs == "  " || passUs1 == "") {
       alert("Введите данные!")
     }else{
-      
+      passUs = MD5(passUs1);
       let newUser = `mutation createUser{
-        createUsers(
-          data:{
+      createUsers(
+        data:{
             name:"${nameUs}"
             password:"${passUs}"
             status: PUBLISHED
-          }){
-          id
-        }
-      }`;
+            menus:{
+              create:{
+                  breakMon:""
+                  dinMon:""
+                  supMon:""
+                  breakTue:""
+                  dinTue:""
+                  supTue:""
+                  breakWed:""
+                  dinWed:""
+                  supWed:""
+                  breakThu:""
+                  dinThu:""
+                  supThu:""
+                  breakFri:""
+                  dinFri:""
+                  supFri:""
+                  breakSat:""
+                  dinSat:""
+                  supSat:""
+                  breakSun:""
+                  dinSun:""
+                  supSun:""
+                  status: PUBLISHED
+            }}}){
+        id
+      }}`;
 
       console.log(newUser);
 
       axios.post(url, {query: newUser})
         .then(response => {
           console.log(response.data);
-          let createUser = response.data.data.id;
+          let createUser = response.data.data.createUsers;
+          let id = createUser.id;
+          document.location.href = "head-menu.html?id=" + id;
         });
-
-        console.log(createUser);
-
-        let mutNewMenu = `mutation newMenu{
-          createMenu(
-            data:{
-              breakMon:""
-              dinMon:""
-              supMon:""
-              breakTue:""
-              dinTue:""
-              supTue:""
-              breakWed:""
-              dinWed:""
-              supWed:""
-              breakThu:""
-              dinThu:""
-              supThu:""
-              breakFri:""
-              dinFri:""
-              supFri:""
-              breakSat:""
-              dinSat:""
-              supSat:""
-              breakSun:""
-              dinSun:""
-              supSun:""
-              users:{connect:{id:"${user}"}}
-              status: PUBLISHED
-            }){
-            id
-            }
-          }`;
-
-          console.log(mutNewMenu);
-          axios.post(url, {query: mutNewMenu})
-              .then(response => {
-                console.log(response.data);
-                let createMenu = response.data.data.id;
-                if (createMenu) {
-                      alert("Изменение данных произведено успешно!");
-                } 
-            });
-
-
-      document.location.href = "head-menu.html?id=";
-      let singUp = document.getElementById("singUp");
-      //singUp.href = "question.html";
     }   
 }
 

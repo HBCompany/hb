@@ -42,13 +42,6 @@ const showMenu = `{
   }
 }`;
 
-let eat = [	"breakMon","dinMon","supMon",
-			"breakTue","dinTue","supTue",
-			"breakWed","dinWed","supWed",
-			"breakThu","dinThu","supThu",
-			"breakFri","dinFri","supFri",
-			"breakSat","dinSat","supSat",
-			"breakSun","dinSun","supSun"]
 let menu = [];
 axios.post(url, {query: showMenu})
     .then(response => {
