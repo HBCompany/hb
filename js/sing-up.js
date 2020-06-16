@@ -67,7 +67,7 @@ function bit_rol(d, _) {
 let singUpBut = document.getElementById("singUpBut");
 
 document.forms[0].onsubmit = function registration(e) {
-    //e.preventDefault();
+    e.preventDefault();
 
     let nameUs = document.getElementById("nameUs").value;
     let passUs = MD5(document.getElementById("passwordUs").value);
@@ -75,29 +75,72 @@ document.forms[0].onsubmit = function registration(e) {
       alert("Введите данные!")
     }else{
       
-    let newUser = `mutation createUser{
-      createUsers(
-        data:{
-          name:"${nameUs}"
-          password:"${passUs}"
-          status: PUBLISHED
-        }){
-        id
-      }
-    }`;
+      let newUser = `mutation createUser{
+        createUsers(
+          data:{
+            name:"${nameUs}"
+            password:"${passUs}"
+            status: PUBLISHED
+          }){
+          id
+        }
+      }`;
 
-    console.log(newUser);
+      console.log(newUser);
+
+      axios.post(url, {query: newUser})
+        .then(response => {
+          console.log(response.data);
+          let createUser = response.data.data.id;
+        });
+
+        console.log(createUser);
+
+        let mutNewMenu = `mutation newMenu{
+          createMenu(
+            data:{
+              breakMon:""
+              dinMon:""
+              supMon:""
+              breakTue:""
+              dinTue:""
+              supTue:""
+              breakWed:""
+              dinWed:""
+              supWed:""
+              breakThu:""
+              dinThu:""
+              supThu:""
+              breakFri:""
+              dinFri:""
+              supFri:""
+              breakSat:""
+              dinSat:""
+              supSat:""
+              breakSun:""
+              dinSun:""
+              supSun:""
+              users:{connect:{id:"${user}"}}
+              status: PUBLISHED
+            }){
+            id
+            }
+          }`;
+
+          console.log(mutNewMenu);
+          axios.post(url, {query: mutNewMenu})
+              .then(response => {
+                console.log(response.data);
+                let createMenu = response.data.data.id;
+                if (createMenu) {
+                      alert("Изменение данных произведено успешно!");
+                } 
+            });
 
 
-    //login:"${logiUs}"
-    axios.post(url, {query: newUser})
-      .then(response => {
-        console.log(response.data);
-        let createUser = response.data.data.id;
-      });
-      //document.location.href = "head-menu.html";
-    let singUp = document.getElementById("singUp");
-    //singUp.href = "question.html";
+      document.location.href = "head-menu.html?id=";
+      let singUp = document.getElementById("singUp");
+      //singUp.href = "question.html";
     }   
 }
 

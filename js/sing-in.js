@@ -79,6 +79,7 @@ document.forms[0].onsubmit = function entry(e) {
       userses(where:{name: "${nameUs}"}){
         password
         name
+        id
       }
     }`;
 
@@ -90,10 +91,13 @@ document.forms[0].onsubmit = function entry(e) {
       .then(response => {
         console.log(response.data.data.userses);
           passwordUs = response.data.data.userses[0].password;
+          id = response.data.data.userses[0].id;
           console.log(passUs);
           console.log(passwordUs);
           if (passUs == passwordUs) {
-            document.location.href = "head-menu.html"; 
+            document.location.href = "head-menu.html?id=" + id; 
+          }else{
+            console.log("Не правильный пароль!");
           }
       })
     ;    
