@@ -212,8 +212,9 @@ addButton.onclick = function newElement() {
         createRutine(
           data:{
           bodyRutine:"${bodyRut}"
-          pageRutine: {connect:{id:"${pageRut}"}}
+          pageRutine: {connect:{id:"${pageRutine}"}}
           status: PUBLISHED
+          users: {connect:{id:"${user}"}}
         }) {
           id
         }
@@ -222,7 +223,7 @@ addButton.onclick = function newElement() {
     axios.post(url, {query: newRutine})
       .then(response => {
           console.log(response.data);
-          let createRutine = response.data.data.id; 
+          let createRutine = response.data.data.createRutine; 
           if (createRutine) {
             console.log("Изменение данных произведено успешно!");
          }
@@ -236,3 +237,9 @@ for (var i = 0; i < elements.length; i++) {
     
   };
 }
+
+let back = document.getElementById("back");
+back.onclick = function(e){
+    e.preventDefault();
+    document.location.href = "head-menu.html?id=" + user;
+};
