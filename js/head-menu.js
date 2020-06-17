@@ -58,6 +58,7 @@ console.log(user);
 
 let room = `{
   users(where:{id:"${user}"}){
+    name
     rooms{
       nameRoom
       id
@@ -78,6 +79,9 @@ axios.post(url, {query: room})
     let timeRut = response.data.data.users.pageRutines;
     let room = response.data.data.users.rooms;
     let idMenu = response.data.data.users.menus[0].id;
+
+    let name = document.getElementById("name");
+    name.textContent = "Привет, " + response.data.data.users.name;
     
     let kitchen = document.getElementById("kitchen");
     let bathrom = document.getElementById("bathrom");

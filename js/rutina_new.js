@@ -137,6 +137,7 @@ console.log(timeRut);
 const timeRoutineQuery = `{
   users(where:{id:"${user}"}){
     pageRutines(where:{id:"${timeRut}"}){
+      id
       time
       rutines{
         bodyRutine
@@ -212,7 +213,7 @@ addButton.onclick = function newElement() {
         createRutine(
           data:{
           bodyRutine:"${bodyRut}"
-          pageRutine: {connect:{id:"${pageRutine}"}}
+          pageRutine: {connect:{id:"${pageRutine[0].id}"}}
           status: PUBLISHED
           users: {connect:{id:"${user}"}}
         }) {
@@ -224,9 +225,6 @@ addButton.onclick = function newElement() {
       .then(response => {
           console.log(response.data);
           let createRutine = response.data.data.createRutine; 
-          if (createRutine) {
-            console.log("Изменение данных произведено успешно!");
-         }
       });
 };
 
