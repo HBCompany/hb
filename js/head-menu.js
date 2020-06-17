@@ -72,7 +72,6 @@ let room = `{
     }
   }
 }`;
-
 axios.post(url, {query: room})
   .then(response => {
     console.log(response.data);
