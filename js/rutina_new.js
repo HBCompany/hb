@@ -140,6 +140,7 @@ const timeRoutineQuery = `{
       id
       time
       rutines{
+        id
         bodyRutine
       }
     }   
@@ -228,11 +229,33 @@ addButton.onclick = function newElement() {
       });
 };
 
+
+
+
 var elements = document.querySelectorAll(".delete");
 for (var i = 0; i < elements.length; i++) {
   elements[i].onclick = function(){
-    
-  };
+    axios.post(url, {query: timeRoutineQuery})
+    .then(response => {
+        textRutine = response.data.data.users.pageRutines.rutines;
+        console.log(pageRutine);
+        for(let j = 0; j < textRutine.length; j++){
+            if (elements[i].value == textRutine[j].bodyRutine) {
+                const delRut = `mutation {
+                  deleteRutine(where:{id:"${textRutine[j].id}"}) {
+                    id
+                  }
+                }`;
+                axios.post(url, {query: delRut})
+                    .then(response => {
+                        let delRu = response.data;
+                        console.log(delRu);
+                    });
+            }
+        }
+        
+
+  });
 }
 
 let back = document.getElementById("back");
