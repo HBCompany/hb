@@ -60,6 +60,11 @@ let room = `{
   users(where:{id:"${user}"}){
     name
     rooms{
+      zones{
+        nameZone
+        bodyZone
+        smallBodyZone
+      }
       nameRoom
       id
     }
@@ -78,6 +83,7 @@ axios.post(url, {query: room})
     let timeRut = response.data.data.users.pageRutines;
     let room = response.data.data.users.rooms;
     let idMenu = response.data.data.users.menus[0].id;
+    let zonesArr = response.data.data.users.rooms[0].zones;
 
     let name = document.getElementById("name");
     name.textContent = "Привет, " + response.data.data.users.name;
@@ -91,7 +97,8 @@ axios.post(url, {query: room})
     let evnRout = document.getElementById("evnRout");
     let exsWeak = document.getElementById("exsWeak");
     let wekMenu = document.getElementById("wekMenu");
-    
+    let setting = document.getElementById("setting")
+
 
     dayRout.onclick = function(e){
       e.preventDefault();
@@ -128,6 +135,10 @@ axios.post(url, {query: room})
     hallway.onclick = function(e){
       e.preventDefault();
       document.location.href = "pred_zone.html?id=" + user + "&room=" + room[4].id;
-    }        
+    }       
+    setting.onclick = function(e){
+      e.preventDefault();
+      document.location.href = "setting.html?id=" + user;
+    } 
 
 });
