@@ -94,7 +94,14 @@ var bindTaskEvents=function(taskListItem,checkBoxEventHandler){
 
     //Bind editTask to edit button.
     //Bind deleteTask to delete button.
-    deleteButton.onclick=deleteTask;
+
+
+
+    deleteButton.onclick=deleteTask; 
+
+
+
+
     //Bind taskCompleted to checkBoxEventHandler.
     checkBox.onchange=checkBoxEventHandler;
 }
@@ -108,14 +115,11 @@ for (var i=0; i<incompleteTaskHolder.children.length;i++){
 }
 
 
-
-
 //cycle over completedTasksHolder ul list items
-for (var i=0; i<completedTasksHolder.children.length;i++){
+/*for (var i=0; i<completedTasksHolder.children.length;i++){
     //bind events to list items chldren(tasksIncompleted)
     bindTaskEvents(completedTasksHolder.children[i],taskIncomplete);
-}
-
+}*/
 
 
 // DB
@@ -147,7 +151,7 @@ const timeRoutineQuery = `{
   }
 }`;
 
-let pageRutine = [];
+pageRutine = [];
 axios.post(url, {query: timeRoutineQuery})
     .then(response => {
         pageRutine = response.data.data.users.pageRutines;
@@ -165,7 +169,7 @@ axios.post(url, {query: timeRoutineQuery})
 
             let textRoutine = document.createElement("input");
             textRoutine.type = "text";
-            textRoutine.className = "input-edit";
+            textRoutine.className = "input-edit deleteRut";
             textRoutine.readOnly = "readonly";
             li.className = "editMode";
             textRoutine.value = `${r.bodyRutine}`;
@@ -184,6 +188,35 @@ axios.post(url, {query: timeRoutineQuery})
             listRoutines.appendChild(li);
             a++;
         }
+
+
+        let rutArrWin = document.getElementsByClassName("deleteRut");
+        let rutArrDel = document.getElementsByClassName("delete");
+        let rutArrBas = pageRutine[0].rutines;
+        
+        for(let i = 0; i < rutArrDel.length; i++){
+            rutArrDel[i].onclick = function(e){
+
+                if (rutArrWin[i].value == rutArrBas[i].bodyRutine) {
+                    const deleteRut = `mutation {
+                      deleteRutine(where:{id:"${rutArrBas[i].id}"}) {
+                        id
+                      }
+                    }`;
+
+                    axios.post(url, {query: deleteRut})
+                        .then(response =>{
+                            delRut = response.data;
+                            console.log(delRut);
+                        });
+                }
+                
+            }
+        }
+
+
+
+
     })
 ;
 
@@ -213,10 +246,10 @@ addButton.onclick = function newElement() {
     let newRutine = `mutation createRutine{
         createRutine(
           data:{
-          bodyRutine:"${bodyRut}"
-          pageRutine: {connect:{id:"${pageRutine[0].id}"}}
-          status: PUBLISHED
-          users: {connect:{id:"${user}"}}
+              bodyRutine:"${bodyRut}"
+              pageRutine: {connect:{id:"${pageRutine[0].id}"}}
+              status: PUBLISHED
+              users: {connect:{id:"${user}"}}
         }) {
           id
         }
@@ -228,35 +261,6 @@ addButton.onclick = function newElement() {
           let createRutine = response.data.data.createRutine; 
       });
 };
-
-
-
-
-var elements = document.querySelectorAll(".delete");
-for (var i = 0; i < elements.length; i++) {
-  elements[i].onclick = function(){
-    axios.post(url, {query: timeRoutineQuery})
-    .then(response => {
-        textRutine = response.data.data.users.pageRutines.rutines;
-        console.log(pageRutine);
-        for(let j = 0; j < textRutine.length; j++){
-            if (elements[i].value == textRutine[j].bodyRutine) {
-                const delRut = `mutation {
-                  deleteRutine(where:{id:"${textRutine[j].id}"}) {
-                    id
-                  }
-                }`;
-                axios.post(url, {query: delRut})
-                    .then(response => {
-                        let delRu = response.data;
-                        console.log(delRu);
-                    });
-            }
-        }
-        
-
-  });
-}
 
 let back = document.getElementById("back");
 back.onclick = function(e){
