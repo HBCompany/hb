@@ -97,7 +97,8 @@ axios.post(url, {query: room})
     let evnRout = document.getElementById("evnRout");
     let exsWeak = document.getElementById("exsWeak");
     let wekMenu = document.getElementById("wekMenu");
-    let setting = document.getElementById("setting")
+    let setting = document.getElementById("setting");
+    let submit  = document.getElementById("submit");
 
 
     dayRout.onclick = function(e){
@@ -139,6 +140,11 @@ axios.post(url, {query: room})
     setting.onclick = function(e){
       e.preventDefault();
       document.location.href = "setting.html?id=" + user;
+    }
+    submit.onclick = function(e){
+      e.preventDefault();
+      document.location.href = "zone.html?id=" + user + "&room=" + room[0].id 
+                            +"$zone=" + room[0].zones[0].nameRoom;
     } 
 
 });

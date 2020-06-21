@@ -63,6 +63,7 @@ const bodyZoneShow = `{
 let zone = [];
 axios.post(url, {query: bodyZoneShow})
     .then(response => {
+      console.log(response.data);
         zone = response.data.data.users.rooms[0];
         console.log(zone);
         let nameZone = document.getElementById("nameZone");

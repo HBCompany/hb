@@ -27,3 +27,9 @@ back.onclick = function(e){
     e.preventDefault();
     document.location.href = "head-menu.html?id=" + user;
 };
+
+let answ = document.getElementById("answer");
+answ.onclick = function(e){
+  e.preventDefault();
+    document.location.href = "answer.html?id=" + user;
+}
